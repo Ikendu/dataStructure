@@ -32,13 +32,13 @@ var stack = function()
 	this.storage = {};
 
 	this.push = function(value)
-	{	
+	{
 		this.storage[this.count] = value;
 		this.count++;
-	}
+	};
 	this.pop = function()
 	{
-		if (this.count == 0)
+		if (this.storage[this.count] == 0)
 		{
 			return undefined;
 		}
@@ -47,27 +47,29 @@ var stack = function()
 			this.count--;
 			var result = this.storage[this.count];
 			delete this.storage[this.count];
-			return (result);
+			return result;
 		}
-	}
+	};
+	this.peek = function()
+	{
+		return (this.storage[this.count-1]);
+	};
 	this.size = function()
 	{
-		return this.count;
-	}
-	this.peek =function()
-	{
-		return this.storage[this.count-1];
-	}
+		return (this.count);
+	};
 }
-
 
 	var myStack = new stack();
 	myStack.push(12);
 	myStack.push(20);
 	myStack.push(2);
-	console.log(myStack.pop());
 	myStack.push(12);
 	myStack.push(20);
 	console.log(myStack.pop());
 	console.log(myStack.storage);
-	console.log(myStack.count);
+	console.log(myStack.size());
+	myStack.push(21);
+	console.log(myStack.peek());
+	console.log(myStack.storage);
+
