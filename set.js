@@ -23,7 +23,7 @@ var mySet = function()
 		if (!this.has(item))
 		{
 			collection.push(item);
-			return (collection);
+			return (true);
 		}
 		return (false);
 	}
@@ -33,7 +33,7 @@ var mySet = function()
 		if (this.has(item))
 		{
 			collection.slice(item, 1);
-			return (collection);
+			return (true);
 		}
 		return (false);
 	}
