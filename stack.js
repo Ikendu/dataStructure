@@ -2,34 +2,34 @@
 var letters = [];
 var i;
 
-var word = "racecddar";
+var word = "racecardd";
 
 var rword = "";
 
 //stack the words inside the array
-for(i = 0; i<word.length; i++)
+for (i = 0; i < word.length; i++)
 {
 	letters.push(word[i]);
 }
-//save them into the rword
-for (i = 0; i<word.length; i++)
+for (i = 0; i < word.length; i++)
 {
 	rword += letters.pop();
 }
-console.log(rword);
 
-if (word === rword)
+console.log(`${rword}`);
+if (word == rword)
 {
-	console.log(`${word} is a phalindrom`);
-}else{
-	console.log(`${word} is not`);
+	console.log(`${word }is a palindrome`);
+} else {
+	console.log(`${word} is not a palindrome`);
 }
+
 
 //creating a stack structure and all its functions
 var stack = function()
 {
-	this.count = 0;
 	this.storage = {};
+	this.count = 0;
 
 	this.push = function(value)
 	{
@@ -41,9 +41,7 @@ var stack = function()
 		if (this.storage[this.count] == 0)
 		{
 			return undefined;
-		}
-		else
-		{
+		} else {
 			this.count--;
 			var result = this.storage[this.count];
 			delete this.storage[this.count];
@@ -52,8 +50,8 @@ var stack = function()
 	};
 	this.peek = function()
 	{
-		return (this.storage[this.count-1]);
-	};
+		return (this.storage[this.count - 1]);
+	}
 	this.size = function()
 	{
 		return (this.count);

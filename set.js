@@ -5,83 +5,88 @@ var mySet = function()
 
 	this.has = function(item)
 	{
-		return (collection.indexOf(item) !== -1);
-	}
+		return(collection.indexOf(item) !== -1);
+	};
+
 	this.values = function()
 	{
-		return collection;
-	}
+		return (collection);
+	};
+
+	this.size = function()
+	{
+		return (collection.length);
+	};
+
 	this.add = function(item)
 	{
 		if (!this.has(item))
 		{
 			collection.push(item);
-			return true; 
-		} else {
-			return false;
+			return (collection);
 		}
-	};
-	this.remove = function(item)
+		return (false);
+	}
+
+	this.remove = function(itme)
 	{
 		if (this.has(item))
 		{
-			var index = collection.indexOf(item);
-			collection.splice(index, 1);
-			return true;
+			collection.slice(item, 1);
+			return (collection);
 		}
-		else {
-			return false;
-		}
-	};
-	this.size = function()
-	{
-		return collection.length();
+		return (false);
 	}
-	this.union = function(otherSet)
+
+	this.union = function(newSet)
 	{
-		var unionSet = new mySet();
+		var result = new mySet();
 		var firstSet = this.values();
-		var secondSet = otherSet.values()
+		var checkSet = newSet.values();
 		firstSet.forEach(function(i){
-			unionSet.add(i);
+			result.add(i);
 		});
-		secondSet.forEach(function(i){
-			unionSet.add(i)
+		checkSet.forEach(function(i){
+			result.add(i);
 		});
-		return unionSet;
-	};
-	this.interSet = function(otherSet)
+		return(result);
+	}
+	this.interset = function(newSet)
 	{
-		var interset = new mySet();
+		var result = new mySet();
 		var firstSet = this.values();
-		var secondSet = otherSet.values();
 		firstSet.forEach(function(i){
-			if(firstSet.has(i))
+			if (newSet.has(i))
 			{
-				interset.add(i)
+				result.add(i)
 			}
 		});
-	}
-	this.diffSet = function(otherSet)
+		return (result)
+	};
+
+	this.diffset = function(newSet)
 	{
-		var diffset = new mySet();
-		var firstSet = this.values()
-		var secondSet = otherSet.values()
+		var result = new mySet();
+		var firstSet = this.values();
 		firstSet.forEach(function(i){
-			if (!this.values.has(i))
+			if (!newSet.has(i))
 			{
-				diffset.add(i);
+				result.add(i);
 			}
 		});
+		return (result);
 	};
-	this.subSet = function(otherSet)
+
+	this.subset = function(newSet)
 	{
 		var firstSet = this.values();
 		return firstSet.every(function(i){
-			return otherSet.has(i);
+			return (newSet.has(i));
 		});
+
 	};
 }
+
 
 var setA = new mySet();
 var setB = new mySet();
@@ -96,3 +101,7 @@ setB.add(23);
 console.log(setA.values());
 
 console.log(setB.subset(setA));
+console.log(setA.size());
+console.log(setA.diffset(setB).values());
+console.log(setA.has("Helloo"));
+console.log(setA.interset(setB).values());
