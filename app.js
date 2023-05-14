@@ -124,7 +124,18 @@ imageItems.onclick = function()
 	clearInterval(controlInterval);
 }
 
-//control submission of form 
+//control submission of form not used yet
+
+var emailReg = /@/;
+
+var myMail = "ndubest56@gmail.com";
+
+if (emailReg.test(myMail))
+{
+	alert("Correct");
+}  
+
+//control submission of form in use
 function formControl()
 {
 	document.getElementById("form").onsubmit = function()
@@ -172,6 +183,24 @@ function formControl()
 	document.getElementById("moreInfo").style.display = "none";
 }
 
+//Ajax properties
+var myRequest = new XMLHttpRequest();
+myRequest.onreadystatechange = function()
+{
+	console.log("we are called");
+	console.log(myRequest.readyState);
+	if (myRequest.readyState === 4)
+	{
+		var p = document.createElement("p");
+		var txt = document.createTextNode(myRequest.reponseText);
+		p.appendChild(txt);
+		document.getElementById("showAjax").appendChild(p);
+	}
+};
+myRequest.open('GET', 'abc.txt', true)
+myRequest.send(null);
+
+
 //control window loading of JavaScript
 window.onload = function()
 {
@@ -180,6 +209,7 @@ window.onload = function()
 	beginAnimation();
 
 };
+
 
 //setTimeout(controlInterval, 3000);
 

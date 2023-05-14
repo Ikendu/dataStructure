@@ -158,3 +158,5 @@ class bst{
 	}
 
 }
+
+const btree = new bst();
