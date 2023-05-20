@@ -38,6 +38,6 @@ body {
 }
 
 .gallery::after {
-  content: "";
+  content: "Add more here";
   width: 350px;
 }
