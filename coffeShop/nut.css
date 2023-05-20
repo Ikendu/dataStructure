@@ -8,25 +8,31 @@ html {
 
 body {
   font-family: 'Open Sans', sans-serif;
+  background-color:  #8a8a5c;
 }
 
 .label {
   border: 2px solid black;
-  width: 270px;
+  width: 330px;
   margin: 20px auto;
   padding: 0 7px;
+  background-color: #d7d7c1;
 }
 
 header h1 {
   text-align: center;
   margin: -4px 0;
-  letter-spacing: 0.15px
+  letter-spacing: 0.15px;
+  background-color: #ebe0e6;
 }
 
 p {
   margin: 0;
   display: flex;
   justify-content: space-between;
+}
+.first{
+  text-align: center;
 }
 
 .divider {
@@ -99,3 +105,5 @@ p {
   margin: 5px 0;
   padding: 0 8px;
   text-indent: -8px;
+   background-color: #ebe0e6;
+}
