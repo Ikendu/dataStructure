@@ -19,7 +19,10 @@ const mayInclude = /favou?r/; //...........may or may not include u
 const exact = /tim{3}er/; //............match exactly 3 m(s) in timmmer
 const more = /tim{3,}er/; //...........match 3 or more m in timmmmmm...mer
 const between = /tim{3,5}er/; //........match between 3 and 5 m's in timmmmmm...mer
-const password = /(?=\w{6,})(?=\D*\d{2})/; //must contain 6 or more character and 2 or more digits
+const password = /(?=\w{6,})(?=\D*\d{2})/; //must contain 6 or more character and 2 or
+//more consecutive digits
+let myRegex = /(Eleanor\s.*|Franklin\s.*)Roosevelt/; //Checks for either (Eleanor or Franklin ) +
+Roosevelt;
 
 const result = myregex.test(myString);
 const output = myString.match(myregex);
