@@ -14,6 +14,12 @@ const username = /^[a-z][a-z]+\d*$|^[a-z]+\d\d+$/i; //username must start with a
 // with a digit, the first two must be a letter, it can be upper or lower case, if it contains
 // only one letter it must be accompanied with two numbers
 
+const whiteSpace = /\s/g; //..............looks for multiple white space [ \r\t\f\n\v]
+const mayInclude = /favou?r/; //...........may or may not include u
+const exact = /tim{3}er/; //............match exactly 3 m(s) in timmmer
+const more = /tim{3,}er/; //...........match 3 or more m in timmmmmm...mer
+const between = /tim{3,5}er/; //........match between 3 and 5 m's in timmmmmm...mer
+
 const result = myregex.test(myString);
 const output = myString.match(myregex);
 const output2 = myString.match(aregex);
