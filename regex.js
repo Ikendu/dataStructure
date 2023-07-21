@@ -25,10 +25,20 @@ let myRegex = /(Eleanor\s.*|Franklin\s.*)Roosevelt/; //Checks for either (Eleano
 //Roosevelt;
 let reRegex2 = /^(\d+) \1 \1$/; // Reuse Patterns Using Capture Groups
 
+let str = "one two three";
+let fixRegex = /(\w+) (\w+) (\w+)/; // Change this line
+let replaceText = "$3 $2 $1"; // Change this line
+let result2 = str.replace(fixRegex, replaceText);
+
 const text = "I want to replace this";
 const item = /this/;
 const replace = text.replace(item, "that");
-console.log(replace);
+console.log(replace, result2);
+
+const hello = " remove both whitespace at the beginning and end  ";
+const noSpace = /^\s+|\s+$/g; //removes white space
+const output44 = hello.replace(noSpace, "");
+console.log(output44);
 
 const result = myregex.test(myString);
 const output = myString.match(myregex);
