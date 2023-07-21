@@ -22,7 +22,13 @@ const between = /tim{3,5}er/; //........match between 3 and 5 m's in timmmmmm...
 const password = /(?=\w{6,})(?=\D*\d{2})/; //must contain 6 or more character and 2 or
 //more consecutive digits
 let myRegex = /(Eleanor\s.*|Franklin\s.*)Roosevelt/; //Checks for either (Eleanor or Franklin ) +
-Roosevelt;
+//Roosevelt;
+let reRegex2 = /^(\d+) \1 \1$/; // Reuse Patterns Using Capture Groups
+
+const text = "I want to replace this";
+const item = /this/;
+const replace = text.replace(item, "that");
+console.log(replace);
 
 const result = myregex.test(myString);
 const output = myString.match(myregex);
