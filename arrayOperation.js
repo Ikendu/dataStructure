@@ -43,7 +43,7 @@ function copyArry(arr, multiple) {
   console.log(newArr);
 }
 copyArry(myArr, 4);
-*/
+
 
 //using indexOf to filter off items or arrays
 const filtered = (arr, elem) => {
@@ -51,6 +51,7 @@ const filtered = (arr, elem) => {
 
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].indexOf(elem) < 0) {
+      //arr[i] is a nested array
       newArr.push(arr[i]);
     }
   }
@@ -67,3 +68,29 @@ console.log(
     3
   )
 );
+*/
+
+//user for...in statement on object
+const users = {
+  Alan: {
+    online: false,
+  },
+  Jeff: {
+    online: true,
+  },
+  Sarah: {
+    online: true,
+  },
+};
+
+const ShowOnline = (myObj) => {
+  let result = 0;
+  for (let user in myObj) {
+    if (myObj[user].online) {
+      //get all online users set to true
+      result++;
+    }
+  }
+  return result;
+};
+console.log(ShowOnline(users));
