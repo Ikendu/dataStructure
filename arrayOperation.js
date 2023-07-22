@@ -91,6 +91,7 @@ const ShowOnline = (myObj) => {
       result++;
     }
   }
-  return result;
+  return [result, Object.keys(myObj)];
+  //return number of user online and all key properties
 };
 console.log(ShowOnline(users));
