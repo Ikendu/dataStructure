@@ -1,4 +1,4 @@
-const arrAdd = (arr, items) => {
+/* const arrAdd = (arr, items) => {
   arr.unshift(items);
   arr.push(items);
   return arr;
@@ -21,13 +21,25 @@ function htmlColorNames(arr) {
   arr.splice(0, 2, "DarkSalmon", "BlanchedAlmond");
   return arr;
 }
+color = [
+  "DarkGoldenRod",
+  "WhiteSmoke",
+  "LavenderBlush",
+  "PaleTurquoise",
+  "FireBrick",
+];
+console.log(htmlColorNames(color));
+*/
+const myArr = ["hello", "success", "come", "here"];
+// myArr.splice(1, 3);
+myArr.splice(2, 3, "will", "locate", "you");
 
-console.log(
-  htmlColorNames([
-    "DarkGoldenRod",
-    "WhiteSmoke",
-    "LavenderBlush",
-    "PaleTurquoise",
-    "FireBrick",
-  ])
-);
+function copyArry(arr, multiple) {
+  let newArr = [];
+  while (multiple >= 1) {
+    newArr.push([...arr]);
+    multiple--;
+  }
+  console.log(newArr);
+}
+copyArry(myArr, 4);
