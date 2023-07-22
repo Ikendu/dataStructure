@@ -29,10 +29,10 @@ color = [
   "FireBrick",
 ];
 console.log(htmlColorNames(color));
-*/
+
 const myArr = ["hello", "success", "come", "here"];
-// myArr.splice(1, 3);
-myArr.splice(2, 3, "will", "locate", "you");
+// myArr.slice(1, 3); //cut off from 2nd index
+myArr.splice(2, 3, "will", "locate", "you"); 
 
 function copyArry(arr, multiple) {
   let newArr = [];
@@ -43,3 +43,27 @@ function copyArry(arr, multiple) {
   console.log(newArr);
 }
 copyArry(myArr, 4);
+*/
+
+//using indexOf to filter off items or arrays
+const filtered = (arr, elem) => {
+  const newArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].indexOf(elem) < 0) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+};
+console.log(
+  filtered(
+    [
+      [3, 2, 3],
+      [1, 6, 3],
+      [3, 13, 26],
+      [19, 3, 9],
+    ],
+    3
+  )
+);
