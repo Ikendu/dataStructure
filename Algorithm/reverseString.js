@@ -16,14 +16,3 @@ const revString = (str) => {
 };
 
 console.log(revString("Another David"));
-
-//checking factorial using reverse
-const checkFactorial = (num) => {
-  let product = 1;
-  for (let i = num; i >= 1; i--) {
-    product *= i;
-  }
-  return product;
-};
-
-console.log(checkFactorial(5));
