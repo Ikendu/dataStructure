@@ -5,6 +5,7 @@ const toUpper = (str) => {
 };
 toUpper("HERE IS MY HANDLE HERE IS MY SPOUT");
 
+//user various string methods
 const toUpperC = (str) => {
   let newStr = str
     .toLowerCase()
@@ -15,3 +16,14 @@ const toUpperC = (str) => {
   console.log(newStr);
 };
 toUpperC("hello I Am becoming greater daily");
+
+const toLower = (str) => {
+  let newStr = str
+    .toUpperCase()
+    .split(" ")
+    .map((val) => val.replace(val.charAt(0), val.charAt(0).toLowerCase()))
+    .join(" ");
+
+  console.log(newStr);
+};
+toLower("hello I Am becoming greater daily");
