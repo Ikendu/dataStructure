@@ -71,7 +71,15 @@ let petCount = pets.reduce((obj, pet) => {
 console.log(petCount);
 
 const largeNum = (arr) => {
-  return arr.map(Function.apply.bind(Math.max, null));
+  result = [];
+  for (let i = 0; i < arr.length; i++) {
+    let larger = arr[i][0];
+    for (let j = 0; j < arr[i].length; j++) {
+      arr[i][j] > larger && (larger = arr[i][j]); //using ternary statement
+    }
+    result[i] = larger;
+  }
+  return result;
 };
 console.log(
   largeNum([
