@@ -8,3 +8,16 @@ const checkFuncEle = (arr, func) => {
   }
 };
 console.log(checkFuncEle([1, 8, 3, 4], (num) => num % 2 === 0));
+
+//chack if an entry is a boolean value
+const checkBoolean = (bool) => {
+  if (bool === true || bool === false) {
+    return true;
+  }
+  return false;
+};
+//using typeof
+const boolChecker = (bool) => {
+  return typeof bool === "boolean";
+};
+console.log(boolChecker(false));
