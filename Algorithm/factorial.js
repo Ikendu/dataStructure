@@ -1,4 +1,4 @@
-//checking factorial using reverse
+//checking factorial using reverse loop
 const checkFactorial = (num) => {
   let product = 1;
   for (let i = num; i >= 1; i--) {
@@ -9,6 +9,7 @@ const checkFactorial = (num) => {
 
 console.log(checkFactorial(5));
 
+//checking the factorial in forward loop
 const factorial = (num) => {
   let result = 1;
 
@@ -18,4 +19,4 @@ const factorial = (num) => {
   return result;
 };
 
-console.log(factorial(4));
+console.log(factorial(5));
