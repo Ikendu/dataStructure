@@ -1,3 +1,4 @@
+//using for loop to get through all the string to check
 const checkInput = (arr) => {
   let main = arr[0].toLowerCase();
   let test = arr[1].toLowerCase();
