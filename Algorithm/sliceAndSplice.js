@@ -24,3 +24,15 @@ const combineArr = (arr1, arr2, n) => {
   return newArr;
 };
 console.log(combineArr([2, 3, 4, 5], [1, 2, 3], 2));
+
+//filter off some (falsy) array items
+const filterArry = (arr) => {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (!arr[i]) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+};
+console.log(filterArry(["hello", null, "how", false, "are", "you"]));
