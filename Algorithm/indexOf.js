@@ -10,6 +10,7 @@ const checkInput = (arr) => {
 };
 console.log(checkInput(["ManboyI", "boyi"]));
 
+//using .every to loop through all the string for checking
 const testAdjacent = (arr) => {
   let main = arr[0].toLowerCase();
   let test = arr[1].toLowerCase();
