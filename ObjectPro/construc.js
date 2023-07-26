@@ -19,6 +19,25 @@ for (let property in bingo) {
     prototypeProp.push(property);
   }
 }
+let checker = Object.prototype.isPrototypeOf(Dog.prototype);
 console.log(ownProp);
 console.log(prototypeProp);
 console.log(bingo);
+console.log(checker);
+
+//Dont repeat yourself
+function Animal() {}
+function Dogs() {}
+function Birds() {}
+
+Dogs.prototype = Object.create(Animal.prototype);
+Birds.prototype = Object.create(Animal.prototype);
+
+Dogs.prototype.constructor = Dogs;
+Birds.prototype.constructor = Birds;
+
+let bingola = new Dogs();
+let duck = new Birds();
+
+console.log(bingola.constructor);
+console.log(duck.constructor);
