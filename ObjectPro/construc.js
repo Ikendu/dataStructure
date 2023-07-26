@@ -47,15 +47,20 @@ Dogs.prototype.legs = 4;
 Dogs.prototype.sound = () => {
   console.log("Woof! Woof!!");
 };
+
 Birds.prototype.legs = (name) => {
   console.log(name + " have two legs");
+};
+//overiding eyes method
+Birds.prototype.eyes = (name) => {
+  console.log(name + " have two blue eye");
 };
 
 let bingola = new Dogs();
 let duck = new Birds();
 bingola.sound();
 bingola.eyes();
-duck.eyes();
+duck.eyes("Igbo-birds");
 duck.legs("Fine-duke");
 
 console.log(bingola.constructor);
