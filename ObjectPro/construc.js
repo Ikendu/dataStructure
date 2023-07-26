@@ -25,10 +25,17 @@ console.log(prototypeProp);
 console.log(bingo);
 console.log(checker);
 
-//Dont repeat yourself
+//Dont repeat yourself (inheritance)
 function Animal() {}
 function Dogs() {}
-function Birds() {}
+
+function Birds(name) {
+  this.name = name;
+}
+
+Animal.prototype.eyes = () => {
+  console.log("I have two eyes");
+};
 
 Dogs.prototype = Object.create(Animal.prototype);
 Birds.prototype = Object.create(Animal.prototype);
@@ -36,8 +43,20 @@ Birds.prototype = Object.create(Animal.prototype);
 Dogs.prototype.constructor = Dogs;
 Birds.prototype.constructor = Birds;
 
+Dogs.prototype.legs = 4;
+Dogs.prototype.sound = () => {
+  console.log("Woof! Woof!!");
+};
+Birds.prototype.legs = (name) => {
+  console.log(name + " have two legs");
+};
+
 let bingola = new Dogs();
 let duck = new Birds();
+bingola.sound();
+bingola.eyes();
+duck.eyes();
+duck.legs("Fine-duke");
 
 console.log(bingola.constructor);
 console.log(duck.constructor);
