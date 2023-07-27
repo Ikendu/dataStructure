@@ -15,3 +15,32 @@ const newList = remove(
   "moody"
 );
 console.log(newList);
+
+//................................................................./
+
+//using spread with push
+const addIn = (arr, item) => {
+  let newlist = [...arr];
+
+  newlist.push(item);
+  return newlist;
+};
+//removing with indexOf method
+const removeIt = (arr, item) => {
+  let newList = [...arr];
+
+  let index = newList.indexOf(item);
+  if (index >= 0) {
+    newList.splice(index, 1);
+  }
+  return newList;
+};
+
+const newB = addIn(["God", "is", "great", "most High"], "and high");
+console.log(newB);
+
+const newIdea = removeIt(
+  ["life", "health", "riches", "wealth", "moody", "love", "happiness"],
+  "moody"
+);
+console.log(newIdea);
