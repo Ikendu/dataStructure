@@ -10,3 +10,16 @@ const addAll = (arr) => {
   return added;
 };
 console.log(addAll([2, 4, 8, 3, 9]));
+
+//using spread
+const addAllNum = (arr) => {
+  let min = Math.min(...arr);
+  let max = Math.max(...arr);
+  let added = 0;
+
+  for (let i = min; i <= max; i++) {
+    added += i;
+  }
+  return added;
+};
+console.log(addAllNum([2, 4, 8, 3, 90]));
