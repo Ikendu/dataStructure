@@ -34,7 +34,7 @@ const myArr = ["hello", "success", "come", "here"];
 // myArr.slice(1, 3); //cut off from 2nd index
 myArr.splice(2, 3, "will", "locate", "you"); 
 
-function copyArry(arr, multiple) {
+function copyArry9=-09876(arr, multiple) {
   let newArr = [];
   while (multiple >= 1) {
     newArr.push([...arr]);
