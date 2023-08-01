@@ -29,3 +29,16 @@ const checkDiff = (arr1, arr2) => {
 };
 console.log(checkDiff([2, 4, 45, 1, 6, 7], [1, 2, 4, 6]));
 console.log(checkDiff(["he", "is", "coming", "soon"], ["he", "is", "coming"]));
+
+const getDiff = (arr1, arr2) => {
+  let newArr = new Set(arr1);
+
+  arr2.forEach((item) =>
+    newArr.has(item) ? newArr.delete(item) : newArr.add(item)
+  );
+  return Array.from(newArr);
+};
+console.log(checkDiff([12, 4, 45, 1, 6, 7], [1, 2, 4, 6, 100]));
+console.log(
+  checkDiff(["she", "is", "coming", "soon"], ["she", "is", "coming"])
+);
