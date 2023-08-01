@@ -17,3 +17,12 @@ function removeUnknown(arr) {
   return remainingItem;
 }
 console.log(removeUnknown([1, 2, 3, 1, 2, 3], 2, 3));
+
+//using Array filter and include methods
+const removeItems = (arr) => {
+  let itemsToDelete = Array.from(arguments).slice(1);
+
+  let remainingItem = arr.filter((item) => itemsToDelete.includes(item));
+  return remainingItem;
+};
+console.log(removeUnknown([1, 2, 3, 1, 2, 3, 9, 10], 2, 3));
