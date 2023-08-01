@@ -1,3 +1,4 @@
+//imperative solution using for loop and if statement
 const arrDiff = (arr1, arr2) => {
   newArr = [];
 
@@ -15,3 +16,16 @@ const arrDiff = (arr1, arr2) => {
 };
 
 console.log(arrDiff([2, 4, 45, 1, 6, 7], [1, 2, 4, 6]));
+console.log(arrDiff(["he", "is", "coming", "soon"], ["he", "is", "coming"]));
+
+//using declarative approach with concat, filter and includes
+const checkDiff = (arr1, arr2) => {
+  let arr3 = arr1.concat(arr2);
+  let newArr = arr3.filter(
+    (item) => arr1.includes(item) == false || arr2.includes(item) == false
+  );
+
+  return newArr;
+};
+console.log(checkDiff([2, 4, 45, 1, 6, 7], [1, 2, 4, 6]));
+console.log(checkDiff(["he", "is", "coming", "soon"], ["he", "is", "coming"]));
