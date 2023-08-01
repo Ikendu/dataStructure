@@ -30,6 +30,7 @@ const checkDiff = (arr1, arr2) => {
 console.log(checkDiff([2, 4, 45, 1, 6, 7], [1, 2, 4, 6]));
 console.log(checkDiff(["he", "is", "coming", "soon"], ["he", "is", "coming"]));
 
+//using set operations with forEach
 const getDiff = (arr1, arr2) => {
   let newArr = new Set(arr1);
 
@@ -38,6 +39,21 @@ const getDiff = (arr1, arr2) => {
   );
   return Array.from(newArr);
 };
+console.log(checkDiff([12, 4, 45, 1, 6, 7], [1, 2, 4, 6, 100]));
+console.log(
+  checkDiff(["she", "is", "coming", "soon"], ["she", "is", "coming"])
+);
+
+//using array spread method and indexOf
+const diffArr = (arr1, arr2) => {
+  let newArr = [...arrDiff(arr1, arr2), ...arrDiff(arr2, arr1)];
+
+  const arrDiff = (a, b) => {
+    return a.filter((item) => b.indexOf(item) !== -1);
+  };
+  return newArr;
+};
+console.log("........");
 console.log(checkDiff([12, 4, 45, 1, 6, 7], [1, 2, 4, 6, 100]));
 console.log(
   checkDiff(["she", "is", "coming", "soon"], ["she", "is", "coming"])
