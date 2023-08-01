@@ -26,3 +26,9 @@ const removeItems = (arr) => {
   return remainingItem;
 };
 console.log(removeUnknown([1, 2, 3, 1, 2, 3, 9, 10], 2, 3));
+
+//...using spread method
+const getUnknown = (arr, ...args) => {
+  return arr.filter((item) => args.includes(item));
+};
+console.log(removeUnknown([1, 2, 3, 1, 2, 3, 9, 10], 2, 3, 1));
