@@ -8,3 +8,10 @@ const latinArrange = (str) => {
     : str.concat("way");
 };
 console.log(latinArrange("zyfcagidi"));
+
+const arrangeLatin = (str) => {
+  return str
+    .replace(/^[aeiou]\w*/gi, "$&way")
+    .replace(/(^[^aeiou]+)(\w*)/, "$2$1ay");
+};
+console.log(arrangeLatin("agidi"));
