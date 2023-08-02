@@ -9,7 +9,7 @@ const addAll = (arr) => {
   }
   return added;
 };
-console.log(addAll([2, 4, 8, 3, 9]));
+console.log(addAll([2, 9]));
 
 //using spread
 const addAllNum = (arr) => {
