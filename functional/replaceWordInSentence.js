@@ -29,3 +29,13 @@ const myReplace = (str, word, replacer) => {
 }
 console.log(myReplace("A quick brown fox Jumped over the lazy dog",
  "Jumped", "leaped"));
+
+ //using array index
+const myReplacer = (str, word, replacer) => {
+	if (word[0] === word[0].toUpperCase()){
+		replacer = replacer.replace(replacer[0], replacer[0].toUpperCase())
+	}
+	return str.replace(word, replacer)
+}
+console.log(myReplacer("A quick brown fox Jumped over the lazy dog",
+ "Jumped", "leaped"));
