@@ -10,3 +10,18 @@ const dnaPair = (str) => {
   return finalStr;
 };
 console.log(dnaPair("GCG"));
+
+//using object lookup
+const elementParing = (str) => {
+  let finalStr = [];
+  const pair = {
+    A: "T",
+    T: "A",
+    G: "C",
+    C: "G",
+  };
+  finalStr = str.split("").map((x) => [x, pair[x]]);
+
+  return finalStr;
+};
+console.log(elementParing("GCG"));
