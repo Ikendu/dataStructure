@@ -11,3 +11,9 @@ function getSet(arr) {
   return newArr;
 }
 console.log(getSet([1, 3, 2], [5, 2, 1, 4], [2, 1]));
+
+//using spread
+function uniqueSet(arr) {
+  return [...new Set(arr.flat())];
+}
+console.log(uniqueSet([1, 3, 2], [5, 2, 1, 4], [2, 1]));
