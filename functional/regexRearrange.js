@@ -14,4 +14,4 @@ const arrangeLatin = (str) => {
     .replace(/^[aeiou]\w*/gi, "$&way")
     .replace(/(^[^aeiou]+)(\w*)/, "$2$1ay");
 };
-console.log(arrangeLatin("agidi"));
+console.log(arrangeLatin("zyfcagidi"));
