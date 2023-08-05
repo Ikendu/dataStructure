@@ -26,6 +26,19 @@ const replaceHtml = (str) => {
   return temp.join("");
 };
 console.log(replaceHtml("Dolce & Gabbana"));
+
+//using object Lookup and replace method
+const convertHtml = (str) => {
+  const lookUp = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&aps;",
+  };
+  return str.replace(/[&<>\"']/g, (match) => lookUp[match]);
+};
+console.log(convertHtml("Dolce <> Gabbana"));
 //&, <, >, " (double quote), and '
 /*
 convertHTML("Dolce & Gabbana") should return the string Dolce &amp; Gabbana.
