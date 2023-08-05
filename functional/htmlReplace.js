@@ -36,7 +36,7 @@ const convertHtml = (str) => {
     '"': "&quot;",
     "'": "&apos;",
   };
-  return str.replace(/[&<>\"']/g, (match) => lookUp[match]);
+  return str.replace(/[&<>"']/g, (match) => lookUp[match]);
 };
 console.log(convertHtml("Dolce > Gabbana"));
 
@@ -44,8 +44,8 @@ console.log(convertHtml("Dolce > Gabbana"));
 const htmlConvert = (str) => {
   let lookUp = {
     "&": "&amp;",
-    ">": "&lt;",
-    "<": "&gt;",
+    "<": "&lt;",
+    ">": "&gt;",
     '"': "&quot;",
     "'": "&apos;",
   };
@@ -55,6 +55,18 @@ const htmlConvert = (str) => {
     .join("");
 };
 console.log(htmlConvert("Dolce > Gabbana"));
+
+//using only simple for loop
+const htmlreplace = (str) => {
+  let items = [/&/g, /</g, />/g, /"/g, /'/g];
+  let replacer = ["&mp;", "&lt;", "&gt;", "&quot;", "&apos;"];
+
+  for (let i = 0; i < items.length; i++) {
+    str = str.replace(items[i], replacer[i]);
+  }
+  return str;
+};
+console.log(htmlreplace("Dolce > Gabbana"));
 //&, <, >, " (double quote), and '
 /*
 convertHTML("Dolce & Gabbana") should return the string Dolce &amp; Gabbana.
