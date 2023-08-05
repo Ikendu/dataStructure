@@ -34,11 +34,27 @@ const convertHtml = (str) => {
     "<": "&lt;",
     ">": "&gt;",
     '"': "&quot;",
-    "'": "&aps;",
+    "'": "&apos;",
   };
   return str.replace(/[&<>\"']/g, (match) => lookUp[match]);
 };
-console.log(convertHtml("Dolce <> Gabbana"));
+console.log(convertHtml("Dolce > Gabbana"));
+
+//using map function with object lookup
+const htmlConvert = (str) => {
+  let lookUp = {
+    "&": "&amp;",
+    ">": "&lt;",
+    "<": "&gt;",
+    '"': "&quot;",
+    "'": "&apos;",
+  };
+  return str
+    .split("")
+    .map((item) => lookUp[item] || item)
+    .join("");
+};
+console.log(htmlConvert("Dolce > Gabbana"));
 //&, <, >, " (double quote), and '
 /*
 convertHTML("Dolce & Gabbana") should return the string Dolce &amp; Gabbana.
