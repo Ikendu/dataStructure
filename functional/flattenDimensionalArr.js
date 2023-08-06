@@ -20,3 +20,12 @@ const arrFlat = (arr) => {
   return newArr.some(Array.isArray) ? arrFlat(newArr) : newArr;
 };
 console.log(arrFlat([1, [2], [3, [[4]]]]));
+
+//using forEach method
+const flatDimen = (arr, newArr = []) => {
+  arr.forEach((item) =>
+    Array.isArray(item) ? flatDimen(item, newArr) : newArr.push(item)
+  );
+  return newArr;
+};
+console.log(flatDimen([1, [2], [3, [[4]]]]));
