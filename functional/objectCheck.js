@@ -42,3 +42,18 @@ console.log(
     "name"
   )
 );
+
+//using .every method
+const checkAll = (collection, pre) => {
+  return collection.every((object) => Boolean(object[pre]));
+};
+console.log(
+  checkAll(
+    [
+      { name: "Quincy", role: "Founder", isBot: false },
+      { name: "Naomi", role: "", isBot: false },
+      { name: "Camperbot", role: "Bot", isBot: true },
+    ],
+    "isBot"
+  )
+);
