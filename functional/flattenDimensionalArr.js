@@ -1,5 +1,6 @@
 const flatten = (arr) => {
   let flatArr = [];
+
   for (let i = 0; i < arr.length; i++) {
     if (Array.isArray(arr[i])) {
       //check if there is more arr dimensions
@@ -11,3 +12,11 @@ const flatten = (arr) => {
   return flatArr;
 };
 console.log(flatten([1, [2], [3, [[4]]]]));
+
+//using some()method
+const arrFlat = (arr) => {
+  let newArr = [].concat(...arr);
+
+  return newArr.some(Array.isArray) ? arrFlat(newArr) : newArr;
+};
+console.log(arrFlat([1, [2], [3, [[4]]]]));
