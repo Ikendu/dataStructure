@@ -1,24 +1,22 @@
 const getLcm = (arr) => {
-  //let max = Math.max(...arr);
-  //let min = Math.min(...arr);
   let [min, max] = arr.sort((a, b) => a - b);
-  let itemSum = max - min + 1;
-  let upper = 1;
+  let totalNum = max - min + 1;
+  let upperResult = 1;
 
   for (let i = min; i <= max; i++) {
-    upper *= i;
+    upperResult *= i;
   }
-
-  for (let multiple = max; multiple < upper; multiple++) {
+  for (let checker = max; checker <= upperResult; checker += max) {
     let counter = 0;
+
     for (let i = min; i <= max; i++) {
-      if (multiple % i === 0) {
+      if (checker % i === 0) {
         counter += 1;
       }
-      if (itemSum === counter) {
-        return multiple;
+      if (counter === totalNum) {
+        return checker;
       }
     }
   }
 };
-console.log(getLcm([23, 18]));
+console.log(getLcm([1, 5]));
