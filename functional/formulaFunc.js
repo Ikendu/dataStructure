@@ -34,7 +34,7 @@ const getPeriod = (arr) => {
 
   for (i in arr) {
     const orbitalT = Math.round(
-      2 * Math.PI * Math.sqrt(Math.pow(eR + arr[i].avgAlt, 3) / GM)
+      pi * Math.sqrt(Math.pow(eR + arr[i].avgAlt, 3) / GM)
     );
     newArr.push({ name: arr[i].name, orbitalPeriod: orbitalT });
   }
