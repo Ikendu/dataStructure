@@ -51,7 +51,7 @@ const periodOrbit = (arr) => {
 
   newArr.forEach((item) => {
     const getOrbit = Math.round(
-      2 * Math.PI * Math.sqrt(Math.pow(eR + item.avgAlt, 3) / GM)
+      pi * Math.sqrt(Math.pow(eR + item.avgAlt, 3) / GM)
     );
     delete item.avgAlt;
     item.periodOrbit = getOrbit;
@@ -60,6 +60,27 @@ const periodOrbit = (arr) => {
 };
 console.log(
   periodOrbit([
+    { name: "iss", avgAlt: 413.6 },
+    { name: "hubble", avgAlt: 556.7 },
+    { name: "moon", avgAlt: 378632.553 },
+  ])
+);
+
+//using the map function
+const periodicOrd = (arr) => {
+  const GM = 398600.4418;
+  const eR = 6367.4447;
+
+  return arr.map(({ name, avgAlt }) => {
+    const pi = 2 * Math.PI;
+    const A = Math.pow(eR + avgAlt, 3);
+
+    const orbitalPeriod = Math.round(pi * Math.sqrt(A / GM));
+    return { name, orbitalPeriod };
+  });
+};
+console.log(
+  periodicOrd([
     { name: "iss", avgAlt: 413.6 },
     { name: "hubble", avgAlt: 556.7 },
     { name: "moon", avgAlt: 378632.553 },
