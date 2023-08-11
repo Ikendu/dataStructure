@@ -1,6 +1,8 @@
 //using regex and string method
 const toUpper = (str) => {
   let newStr = str.toLowerCase().replace(/(^|\s)\S/g, (L) => L.toUpperCase());
+  //the regex selects the non-space character that comes immediatly
+  //after the beginning of after a space
   console.log(newStr);
 };
 toUpper("HERE IS MY HANDLE HERE IS MY SPOUT");

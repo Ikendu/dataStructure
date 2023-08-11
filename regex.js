@@ -12,7 +12,7 @@ const numeric = /\d/g; //................match all digits
 
 const username = /^[a-z][a-z]+\d*$|^[a-z]+\d\d+$/i; //username must start with a letter and end
 // with a digit, the first two must be a letter, it can be upper or lower case, if it contains
-// only one letter it must be accompanied with two numbers
+// only one letter it must be accompanied with two numbers OR /^[a-z](\d{2}|[a-z]+\d*)$/i
 
 const whiteSpace = /\s/g; //..............looks for multiple white space [ \r\t\f\n\v]
 const mayInclude = /favou?r/; //...........may or may not include u
@@ -26,8 +26,8 @@ let myRegex = /(Eleanor\s.*|Franklin\s.*)Roosevelt/; //Checks for either (Eleano
 let reRegex2 = /^(\d+) \1 \1$/; // Reuse Patterns Using Capture Groups
 
 let str = "one two three";
-let fixRegex = /(\w+) (\w+) (\w+)/; // Change this line
-let replaceText = "$3 $2 $1"; // Change this line
+let fixRegex = /(\w+) (\w+) (\w+)/;
+let replaceText = "$3 $2 $1";
 let result2 = str.replace(fixRegex, replaceText);
 
 const text = "I want to replace this";
