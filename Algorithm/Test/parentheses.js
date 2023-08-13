@@ -1,7 +1,5 @@
 const parentheses = (str) => {
   let result = "";
-  let right = "";
-  let left = "";
   for (let i = 0; i < str.length; i++) {
     if (str[i] === "(" && str[i + 1] === ")") {
       return "valid";
@@ -12,17 +10,33 @@ const parentheses = (str) => {
     if (str[i] == "{" && str[i + 1] == "}") {
       return "valid";
     }
-    // if (str[i] == "(" || str[i] == "{" || str[i] == "[") {
-    //   right += str[i];
-    // }
-    // if (str[i] == ")" || str[i] == "}" || str[i] == "]") {
-    //   left += str[i];
-    // }
   }
-  //   if (right.length === left.length) {
-  //     return "valid";
-  //   }
-  //console.log(right, left);
   return "invalid";
 };
-console.log(parentheses("{{{[]}}}"));
+console.log(parentheses("{]"));
+
+//using chatGPT
+const isMatch = (str) => {
+  const stack = [];
+
+  const bracketStore = {
+    "(": ")",
+    "{": "}",
+    "[": "]",
+  };
+
+  for (char of str) {
+    if (char in bracketStore) {
+      stack.push(char);
+    } else {
+      const lastBracket = stack.pop();
+      if (bracketStore[lastBracket] !== char) {
+        return "invalid";
+      }
+    }
+  }
+  if (stack.length === 0) {
+    return "valid";
+  }
+};
+console.log(isMatch("[[[{}]]]{}[]{}"));
