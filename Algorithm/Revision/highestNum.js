@@ -21,3 +21,17 @@ console.log(
     [1000, 1001, 857, 1],
   ])
 );
+//using map method
+const getLagerNums = (arr) => {
+  return arr.map((group) =>
+    group.reduce((prev, curr) => (prev > curr ? prev : curr))
+  );
+};
+console.log(
+  getLagerNums([
+    [4, 5, 1, 3],
+    [13, 27, 18, 26],
+    [32, 35, 37, 39],
+    [1000, 1001, 857, 1],
+  ])
+);
