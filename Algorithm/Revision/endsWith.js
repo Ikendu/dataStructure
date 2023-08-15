@@ -17,3 +17,13 @@ const endStr = (str, end) => {
   return regex.test(str);
 };
 console.log(endStr("Bastian", "ian"));
+
+//repeat a string num times
+const repeater = (str, num) => {
+  newStr = "";
+  for (let i = 0; i < num; i++) {
+    newStr += str;
+  }
+  return newStr;
+};
+console.log(repeater("hello", 3));
