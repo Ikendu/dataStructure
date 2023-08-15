@@ -21,3 +21,18 @@ const longestWord = (str) => {
     .reduce((longest, word) => Math.max(longest, word.length), 0);
 };
 console.log(longestWord("The quick brown fox jumped over the lazy dog"));
+
+//using map and Math.max
+const longerWord = (str) => {
+  return Math.max(...str.split(" ").map((word) => word.length));
+};
+console.log(longerWord("The quick brown fox jumped over the lazyooooo dog"));
+
+//OR
+const longer = (str) => {
+  return Math.max.apply(
+    null,
+    str.split(" ").map((word) => word.length)
+  );
+};
+console.log(longerWord("The quick brown fox jumped over the lazyooooo dog"));
