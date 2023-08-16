@@ -12,14 +12,14 @@ const insert1 = (arr, num) => {
 };
 console.log(insert1([100, 40, 10, 60], 50));
 
-//using normal for-loop
+//using normal for-loop and counter
 const insert2 = (arr, num) => {
-  let position = 0;
+  let counter = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] <= num) {
-      position++;
+      counter++;
     }
   }
-  return position;
+  return counter;
 };
 console.log(insert2([100, 40, 10, 60], 50));
