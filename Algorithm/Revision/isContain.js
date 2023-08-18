@@ -12,3 +12,12 @@ const isContain = (arr) => {
   return true;
 };
 console.log(isContain(["Hello", "hey"]));
+
+//using .every method
+const isContain2 = (arr) => {
+  return arr[1]
+    .toLowerCase()
+    .split(" ")
+    .every((char) => arr[0].toLowerCase().indexOf(char) > -1);
+};
+console.log(isContain2(["Hello", "hel"]));
