@@ -57,3 +57,26 @@ const getUnique4 = (arr1, arr2) => {
   return Array.from(diff);
 };
 console.log(getUnique4([1, "calf", 3, "piglet", 5, 6], [1, "calf", 3, 4]));
+
+//using inner function, spread, includes and filter
+const getUnique5 = (arr1, arr2) => {
+  const diff = (a, b) => a.filter((item) => !b.includes(item));
+  return [...diff(arr1, arr2), ...diff(arr2, arr1)];
+};
+console.log(getUnique5([1, "calf", 3, "piglet", 50, 6], [1, 7, "calf", 3, 4]));
+
+//using inner function and for-loop
+const getUnique6 = (arr1, arr2) => {
+  let newArr = [];
+  const diff = (a, b) => {
+    for (let i = 0; i < a.length; i++) {
+      if (!b.includes(a[i])) {
+        newArr.push(a[i]);
+      }
+    }
+  };
+  diff(arr1, arr2);
+  diff(arr2, arr1);
+  return newArr;
+};
+console.log(getUnique6([1, "calf", 3, "piglet", 50, 6], [1, 7, "calf", 3, 4]));
