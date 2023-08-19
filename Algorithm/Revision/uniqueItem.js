@@ -34,3 +34,26 @@ const getUnique2 = (arr1, arr2) => {
   return arr1.filter(Boolean).concat(arr2.filter(Boolean));
 };
 console.log(getUnique2([1, "calf", 3, "piglet", 5, 6], [1, "calf", 3, 4]));
+
+//using sort and traditional for-loop
+const getUnique3 = (arr1, arr2) => {
+  let newArr = [];
+  let sorted = arr1.concat(arr2).sort();
+
+  for (let i = 0; i < sorted.length; i++) {
+    if (sorted[i] !== sorted[i + 1] && sorted[i] !== sorted[i - 1]) {
+      newArr.push(sorted[i]);
+    }
+  }
+  return newArr;
+};
+console.log(getUnique3([1, "calf", 3, "piglet", 5, 6], [1, "calf", 3, 4]));
+
+//using map of forEach method
+const getUnique4 = (arr1, arr2) => {
+  let diff = new Set(arr1);
+
+  arr2.map((item) => (diff.has(item) ? diff.delete(item) : diff.add(item)));
+  return Array.from(diff);
+};
+console.log(getUnique4([1, "calf", 3, "piglet", 5, 6], [1, "calf", 3, 4]));
