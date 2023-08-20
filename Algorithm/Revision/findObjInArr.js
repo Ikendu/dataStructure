@@ -7,7 +7,7 @@ const findObj = (arr, obj) => {
     for (let j in obj) {
       if (arr[i][j] !== obj[j]) matched = true;
     }
-    if (!matched) newArr.push(arr[i]);
+    if (!matched) newArr.push("hello");
   }
   return newArr;
 };
