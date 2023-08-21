@@ -34,3 +34,9 @@ function unique2(arr) {
   return [...arguments].flat().filter((val, i, arr) => arr.indexOf(val) === i);
 }
 console.log(unique2([1, 3, 2], [5, 2, 1, 4], [2, 1]));
+
+//using set() method
+const unique3 = (...arr) => {
+  return [...new Set(arr.flat())];
+};
+console.log(unique3([1, 3, 2], [5, 2, 1, 4], [2, 1]));
