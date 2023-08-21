@@ -18,3 +18,14 @@ const pairing = (str) => {
 console.log(pairing("GCG"));
 
 //using object lookup
+const pairing1 = (str) => {
+  let pairs = {
+    A: "T",
+    C: "G",
+    T: "A",
+    G: "C",
+  };
+
+  return str.split("").map((pair) => [pair, pairs[pair]]);
+};
+console.log(pairing1("GCG"));
