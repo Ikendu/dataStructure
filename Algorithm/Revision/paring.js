@@ -17,7 +17,7 @@ const pairing = (str) => {
 };
 console.log(pairing("GCG"));
 
-//using object lookup
+//using object lookup(single pair)
 const pairing1 = (str) => {
   let pairs = {
     A: "T",
@@ -29,3 +29,15 @@ const pairing1 = (str) => {
   return str.split("").map((pair) => [pair, pairs[pair]]);
 };
 console.log(pairing1("GCG"));
+
+//using object lookup (full)
+const pairing2 = (str) => {
+  let pairs = {
+    A: ["A", "T"],
+    T: ["T", "A"],
+    C: ["C", "G"],
+    G: ["G", "C"],
+  };
+  return str.split("").map((x) => pairs[x]);
+};
+console.log(pairing2("GCG"));
