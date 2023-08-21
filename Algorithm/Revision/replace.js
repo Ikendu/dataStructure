@@ -49,5 +49,5 @@ const replacer3 = (str, before, after) => {
   return str.replace(before, after);
 };
 console.log(
-  replacer3("A quick brown fox Jumped over the lazy dog", "Jumped", "leaped")
+  replacer3("A quick brown fox lumped over the lazy dog", "lumped", "leaped")
 );
