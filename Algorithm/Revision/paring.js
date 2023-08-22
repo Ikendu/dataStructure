@@ -38,6 +38,6 @@ const pairing2 = (str) => {
     C: ["C", "G"],
     G: ["G", "C"],
   };
-  return str.split("").map((x) => pairs[x]);
+  return str.split.map((x) => pairs[x]);
 };
 console.log(pairing2("GCG"));
