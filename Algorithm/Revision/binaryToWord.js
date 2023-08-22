@@ -1,0 +1,21 @@
+const binaryToWord = (str) => {
+  return str
+    .split(" ")
+    .map((val) => String.fromCharCode(parseInt(val, 2)))
+    .join("");
+};
+console.log(
+  binaryToWord(
+    "01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"
+  )
+);
+
+//another way
+const binaryToWord1 = (str) => {
+  return String.fromCharCode(...str.split(" ").map((val) => parseInt(val, 2)));
+};
+console.log(
+  binaryToWord1(
+    "01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"
+  )
+);
