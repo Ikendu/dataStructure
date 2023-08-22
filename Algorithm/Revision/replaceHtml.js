@@ -45,3 +45,29 @@ const htmlReplace2 = (str) => {
   return str;
 };
 console.log(htmlReplace2("Dolce <> Gabbana"));
+
+//using switch-case split and join
+const htmlReplace3 = (str) => {
+  str = str.split("");
+  for (let i in str) {
+    switch (str[i]) {
+      case "&":
+        str[i] = "&amp";
+        break;
+      case "<":
+        str[i] = "&lt;";
+        break;
+      case ">":
+        str[i] = "&gt;";
+        break;
+      case '"':
+        str[i] = "&quot;";
+        break;
+      case "'":
+        str[i] = "&apos;";
+        break;
+    }
+  }
+  return str.join("");
+};
+console.log(htmlReplace3("Dolce <> Gabbana"));
