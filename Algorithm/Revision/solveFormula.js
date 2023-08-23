@@ -20,6 +20,7 @@ console.log(
   ])
 );
 
+//using forEach
 const orbital1 = (arr) => {
   let eRadius = 6367.4447;
   let Gm = 398600.4418;
@@ -36,6 +37,28 @@ const orbital1 = (arr) => {
 };
 console.log(
   orbital1([
+    { name: "iss", avgAlt: 413.6 },
+    { name: "hubble", avgAlt: 556.7 },
+    { name: "moon", avgAlt: 378632.553 },
+  ])
+);
+
+//using for-of-loop
+const orbital2 = (arr) => {
+  let eRadius = 6367.4447;
+  let Gm = 398600.4418;
+  let pi = 2 * Math.PI;
+
+  for (let x of arr) {
+    let a3 = Math.pow(eRadius + x.avgAlt, 3);
+    let root = Math.sqrt(a3 / Gm);
+    x.orbital = Math.round(pi * root);
+    delete x.avgAlt;
+  }
+  return arr;
+};
+console.log(
+  orbital2([
     { name: "iss", avgAlt: 413.6 },
     { name: "hubble", avgAlt: 556.7 },
     { name: "moon", avgAlt: 378632.553 },
