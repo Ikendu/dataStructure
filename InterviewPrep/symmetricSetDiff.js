@@ -17,3 +17,16 @@ const symmetric = (...args) => {
   return [...new Set(args.reduce(diff))];
 };
 console.log(symmetric([1, 2, 3, 3], [5, 2, 1, 4]));
+
+//using the spread method to get arr diff
+function symmetric1() {
+  let args = [...arguments];
+
+  const diff = (arr1, arr2) => [
+    ...arr1.filter((e) => !arr2.includes(e)),
+    ...arr2.filter((e) => arr1.indexOf(e) < 0),
+  ];
+
+  return [...new Set(args.reduce(diff))];
+}
+console.log(symmetric1([1, 2, 3, 3], [5, 2, 1, 4]));
