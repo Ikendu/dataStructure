@@ -32,3 +32,21 @@ function addMissing1() {
   }
 }
 console.log(addMissing1(2, 33));
+
+//using isInfinit
+const addMissing2 = (...arg) => {
+  let [a, b] = [...arg];
+
+  const isNum = (num) => {
+    return Number.isFinite(num);
+  };
+  if (isNum(a)) {
+    if (isNum(b)) return a + b;
+    if (!b) {
+      return (b) => {
+        if (isNum(b)) return a + b;
+      };
+    }
+  }
+};
+console.log(addMissing2(2)("33"));
