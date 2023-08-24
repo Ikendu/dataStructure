@@ -13,7 +13,7 @@ let user = {
     },
   },
 };
-
+//adding to the abject of an array
 const modify = (userDeails, friend) => {
   userDeails.data.friends.push(friend);
   return userDeails.data.friends;

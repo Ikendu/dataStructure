@@ -1,18 +1,17 @@
 //using iteration with for-loop
-const reverseStr = (str) => {
-  let revStr = "";
+const reverser = (str) => {
+  let newStr = "";
   for (let i = str.length - 1; i >= 0; i--) {
-    revStr += str[i];
+    newStr += str[i];
   }
-  return revStr;
+  return newStr;
 };
 
 console.log(reverseStr("David"));
 
 //using array method
-const revString = (str) => {
-  newStr = str.split("").reverse().join("");
-  return newStr;
+const reverString = (str) => {
+  return str.split("").reverse().join("");
 };
 
 console.log(revString("Another David"));
