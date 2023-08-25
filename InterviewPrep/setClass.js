@@ -41,6 +41,13 @@ class Set {
     this.values.map(helper);
     setB.map(helper);
   }
+  intersection(setB) {
+    let newSet = new Set();
+    this.values().forEach((item) => {
+      if (setB.includes(item)) newSet.add(item);
+      return newSet;
+    });
+  }
 }
 let mySet = new Set();
 mySet.add(2);
