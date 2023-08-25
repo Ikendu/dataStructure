@@ -20,5 +20,7 @@ const binarySearch(arr, value) => {
         }
     }
     pathWay.push(arr[mid])
+
+    return pathWay
     
 }
