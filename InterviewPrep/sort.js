@@ -1,4 +1,4 @@
-//sort array list from the list to the most
+//sort array list from the list to the most using bubble sort
 const bubbleSort = (arr, arg) => {
   for (let i = 0; i < arr.length; i++) {
     for (let j = i + 1; j < arr.length; j++) {
