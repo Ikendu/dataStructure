@@ -44,8 +44,14 @@ class Set {
   intersection(setB) {
     let newSet = new Set();
     this.values().forEach((item) => {
-      if (setB.includes(item)) newSet.add(item);
+      if (setB.values().includes(item)) newSet.add(item);
       return newSet;
+    });
+  }
+  //check if this set is a subset of setB
+  subset(setB) {
+    return this.values().every((item) => {
+      return setB.values().includes(item);
     });
   }
 }
