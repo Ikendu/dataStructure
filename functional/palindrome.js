@@ -1,11 +1,13 @@
+//using backward iteration
 const palindrome = (str) => {
-  str = str.toLowerCase().match(/[a-zA-Z0-9]/g);
-  for (let i = 0, j = str.length - 1; i < j; i++) {
-    if (str[i] !== str[j - i]) {
-      return false;
-    }
+  str = str.toLowerCase().replace(/\W|_/gi, "");
+  let back = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    back += str[i];
   }
-  return true;
+  console.log(back);
+
+  return str === back;
 };
 console.log(palindrome("never odd or even"));
 
@@ -14,4 +16,4 @@ const palindrom = (str) => {
   let newStr = str.toLowerCase().replace(/[\W_]/g, "");
   return newStr === newStr.split("").reverse().join("");
 };
-console.log(palindrom("never odd or even"));
+console.log(palindrom("never odd or evenr"));
