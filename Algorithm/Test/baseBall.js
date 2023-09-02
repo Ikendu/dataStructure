@@ -1,5 +1,4 @@
 const baseBall = (ops) => {
-  let x = parseInt("x");
   let record = [];
   let result = 0;
 
