@@ -1,3 +1,4 @@
+//givi
 const numgen = (digits, num) => {
   let result = 0;
   //let digits = digits.
