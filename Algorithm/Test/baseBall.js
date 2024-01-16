@@ -26,4 +26,4 @@ const baseBall = (ops) => {
   //console.log(record);
   return result;
 };
-console.log(baseBall(["5", "-2", "4", "C", "D", "9", "+", "+"]));
+console.log(baseBall(["5", "-2", "4", "C", "D", "9", "+", "+", "3"]));

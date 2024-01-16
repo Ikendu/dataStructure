@@ -37,3 +37,11 @@ const wordCode1 = (str) => {
   //return result.join("");
 };
 console.log(wordCode1("SERR PBQR PNZC!"));
+
+const wordCode2 = (str) => {
+  return str.replace(/[a-zA-Z]/g, (char) => {
+    let base = char === char.toUpperCase() ? 65 : 97;
+    return String.fromCharCode((char.charCodeAt() - base + 13) % 26);
+  });
+};
+console.log(wordCode1("SERR PBQR PNZC!"));

@@ -1,42 +1,42 @@
 const parentheses = (str) => {
+  let store = [];
   let result = "";
   for (let i = 0; i < str.length; i++) {
-    if (str[i] === "(" && str[i + 1] === ")") {
-      return "valid";
-    }
-    if (str[i] == "[" && str[i + 1] == "]") {
-      return "valid";
-    }
-    if (str[i] == "{" && str[i + 1] == "}") {
-      return "valid";
+    if (str[i] == "(" || str[i] == "[" || str[i] == "{") {
+      store.push(str[i]);
+    } else {
+      let getter = store.pop();
+      if (getter == "{" && str[i] != "}") return "invalid";
+      else if (getter == "[" && str[i] != "]") return "invalid";
+      else if (getter == "(" && str[i] != ")") return "invalid";
     }
   }
-  return "invalid";
+  if (store.length === 0) return "valid";
+  else return "invalid";
 };
-console.log(parentheses("{]"));
+console.log(parentheses("{{{"));
 
 //using chatGPT
 const isMatch = (str) => {
-  const stack = [];
+  let arr = [];
 
-  const bracketStore = {
+  let brackets = {
     "(": ")",
     "{": "}",
     "[": "]",
   };
 
-  for (char of str) {
-    if (char in bracketStore) {
-      stack.push(char);
+  for (let i of str) {
+    if (brackets.hasOwnProperty(i)) {
+      arr.push(i);
     } else {
-      const lastBracket = stack.pop();
-      if (bracketStore[lastBracket] !== char) {
+      let last = arr.pop();
+      if (brackets[last] !== i) {
         return "invalid";
       }
     }
   }
-  if (stack.length === 0) {
-    return "valid";
-  }
+  if (arr.length === 0) return "valid";
+  else return "invalid";
 };
-console.log(isMatch("[[[{}]]]{}[]{}"));
+console.log(isMatch("{{{{}}}}"));

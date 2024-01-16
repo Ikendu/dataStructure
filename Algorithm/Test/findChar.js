@@ -26,7 +26,6 @@ const charArea = (h, word) => {
   let max = 0;
   for (let i in word) {
     char = word[i].charCodeAt() - 97;
-
     if (h[char] > max) max = h[char];
   }
   return max * word.length;
