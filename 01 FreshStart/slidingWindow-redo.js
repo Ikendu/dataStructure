@@ -32,19 +32,72 @@
 // }
 // console.log(ans)
 
-let array = [-3, 0, 1, 2, -1, 1, -2]
-let sorted = array.sort((a, b) => a - b)
-console.log(sorted)
-let curr = 0
-let ans = 0
-let left = 0
-for (let i = 0; i < array.length; i++) {
-  let curr = sorted[i]
-  let right = sorted.length-1
-  while(){}
-}
-console.log(ans)
+// unfinished
+// let array = [-3, 0, 1, 2, -1, 1, -2]
+// let sorted = array.sort((a, b) => a - b)
+// console.log(sorted)
+// let curr = 0
+// let ans = 0
+// let left = 0
+// for (let i = 0; i < array.length; i++) {
+//   let curr = sorted[i]
+//   let right = sorted.length-1
+//   while(){}
+// }
+// console.log(ans)
 
 //EDUDREAMS
-//dynamic programming~~~memorization~~caching
+//dynamic programming~~~memorization~~cacheing
 
+// const addTo80 = (n) => {
+//   console.log(`adding to 80...`)
+//   console.log(n + 80)
+// }
+// const memorized = () => {
+//   let chache = {}
+//   return function (n) {
+//     if (n in chache) {
+//       return chache[n]
+//     } else {
+//       console.log(`long time work`)
+//       chache[n] = n + 80
+//       return chache[n]
+//     }
+//   }
+// }
+
+// const memorize = memorized()
+// console.log(memorize(5))
+// console.log(memorize(5))
+// console.log(memorize(5))
+// console.log(memorize(7))
+
+let calc = 0
+const fibonacci = (n) => {
+  calc++
+  if (n < 2) {
+    return n
+  }
+
+  return fibonacci(n - 1) + fibonacci(n - 2)
+}
+
+console.log(`fib`, fibonacci(10))
+console.log(calc)
+
+let memorizedFib = () => {
+  let cached = {}
+  return (n) => {
+    if (cached[n]) {
+      return cached[n]
+    } else {
+      if (n < 2) {
+        return n
+      } else {
+        return cached[fibonacci[n - 2] + fibonacci[n - 1]]
+      }
+    }
+  }
+}
+let memfib = memorizedFib()
+console.log(memfib(10))
