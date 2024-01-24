@@ -31,3 +31,20 @@ console.log(isPrime(12))
 console.log(improvedPrime(7))
 console.log(improvedPrime(11))
 console.log(improvedPrime(21))
+
+//prime factors less than a number
+const primeFactors = (n) => {
+  let arr = []
+  while (n % 2 === 0) arr.push(2), (n = n / 2)
+
+  for (let i = 3; i * i <= n; i += 9) {
+    while (n % i === 0) {
+      arr.push(i)
+      n = n / 3
+    }
+  }
+  if (n > 2) arr.push(n)
+  return arr.join(` `)
+}
+
+console.log(primeFactors(21))
