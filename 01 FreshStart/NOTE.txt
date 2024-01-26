@@ -1,0 +1,8 @@
+Beginning Functional JavaScript by Anto Aravinth
+(Apress, 2017).
+
+functional array methods...
+
+
+Tic-Tac-Toe Check
+Spiral Print
