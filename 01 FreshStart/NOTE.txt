@@ -6,3 +6,4 @@ functional array methods...
 
 Tic-Tac-Toe Check
 Spiral Print
+Matric rotate
