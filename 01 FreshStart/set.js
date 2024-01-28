@@ -29,5 +29,37 @@ const unionSet = (setA, setB) => {
   const array2 = Array.from(setB)
   return new Set([...array1, ...array2])
 }
+//OR
+const unionSet1 = (setA, setB) => {
+  let union = new Set(setA)
+  for (let ele of setB) {
+    union.add(ele)
+  }
+  return union
+}
 console.log(`union of set`)
-console.log(unionSet(setA, setB))
+console.log(unionSet1(setA, setB))
+
+//difference of set
+const differenceSet = (setA, setB) => {
+  let diff = new Set(setA)
+  for (let ele of setB) {
+    diff.delete(ele)
+  }
+  return diff
+}
+console.log(`difference of sets`)
+console.log(differenceSet(setA, setB))
+
+//check for duplicate in an array
+const checkDuplicate = (arr) => {
+  let setA = new Set(arr)
+  return setA.size < arr.length
+}
+console.log(checkDuplicate([2, 3, 4, 1, 5, 6, 1]))
+
+//return unique arrays
+const uniqueArray = (arr1, arr2) => {
+  return Array.from(new Set(arr1.concat(arr2)))
+}
+console.log(uniqueArray([1, 2, 3, `a`, `b`], [3, 5, 6, `a`, `c`]))
