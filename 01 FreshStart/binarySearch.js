@@ -6,7 +6,7 @@ const binarySearch = (array, n) => {
     var midIdx = Math.floor((lastIdx + startIdx) / 2)
 
     if (array[midIdx] == n) return midIdx
-    else if (n > array[midIdx]) {
+    else if (n >= array[midIdx]) {
       startIdx = midIdx
     } else {
       lastIdx = midIdx
