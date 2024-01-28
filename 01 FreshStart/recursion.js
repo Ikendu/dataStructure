@@ -70,7 +70,6 @@ const flatenedObj = (dictionary) => {
       }
     }
   }
-
   flatenedHelper(dictionary, ``)
   return flatdictionary
 }
@@ -78,6 +77,7 @@ const flatenedObj = (dictionary) => {
 const flatdic = flatenedObj({
   key1: `valu1`,
   key2: { key3: { key4: `valu2`, key5: `valu3`, key6: `valu4` }, key7: `valu5` },
-  key8: { key12: `valu6`, key11: { key9: `valu10` } },
+  key8: { key12: `valu6`, key11: { key9: `valu10` }, key14: `` },
+  key13: ``,
 })
 console.log(flatdic)

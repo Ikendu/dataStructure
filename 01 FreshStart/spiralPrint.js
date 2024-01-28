@@ -8,7 +8,7 @@ const spiralPrint = (multi) => {
 
   while (toprow < btmrow && leftcol < rightcol) {
     for (let col = 0; col <= rightcol; col++) {
-      console(multi[toprow][col])
+      console.log(multi[toprow][col])
     }
     toprow++
     for (let row = toprow; row <= btmrow; row++) {
