@@ -54,7 +54,7 @@ const pascalTri = (row, col) => {
 console.log(`Pascal`)
 console.log(pascalTri(5, 2))
 
-//flatened Object
+//flatened Object/Dictionary
 const flatenedObj = (dictionary) => {
   let flatdictionary = {}
   const flatenedHelper = (dictionary, propName) => {

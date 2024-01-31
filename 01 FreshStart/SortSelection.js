@@ -9,7 +9,7 @@ const selectionSort = (array) => {
         min = j
       }
     }
-    if (min != i) {
+    if (i != min) {
       swap(array, min, i)
     }
   }
