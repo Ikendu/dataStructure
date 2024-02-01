@@ -57,3 +57,21 @@ const binarySqrt = (number) => {
   return ans
 }
 console.log(binarySqrt(25))
+
+//find the Sqrt of floating number
+const binarySqrt1 = (number) => {
+  if (number == 0 || number == 1) return number
+  let float = 0.1
+  let upper = number
+  let lower = 0
+  let mid
+  while (upper - lower > float) {
+    mid = (upper + lower) / 2
+    let middle = mid * mid
+    //if (middle == number) return mid
+    if (middle < number) lower = mid
+    else upper = mid
+  }
+  return mid
+}
+console.log(binarySqrt1(25.785))
