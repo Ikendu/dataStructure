@@ -44,3 +44,24 @@ const median = (array) => {
 }
 
 console.log({ median: median([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]) })
+
+//get avaerage of each row of a two dimensional array
+var grades = [[89, 77, 78],[76, 82, 81],[91, 94, 89]];
+
+const studentAverage = (array) => {
+  let avaerageSets = []
+  let total = 0
+  let avarage = 0.0
+
+  for(let i = 0; i< array.length; i++){
+    for(let j = 0; j<array[i].length; j++){
+      total += array[i][j]
+    }
+    avarage = total/array[i].length
+    avaerageSets.push(Number(avarage.toFixed(2)))
+    total = 0
+    avarage = 0
+  }
+  return avaerageSets
+}
+console.log(`Student Average`, studentAverage(grades))
