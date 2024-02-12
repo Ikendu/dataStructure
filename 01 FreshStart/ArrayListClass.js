@@ -17,19 +17,30 @@ function List(){
     this.getElement = getElement
     this.contains = contains
 }
-function appendOne(item){
-    return this.listStore.push(item)
+function appendOne(ele){
+    return this.listStore.push(ele)
 }
 function currPos(ele){
 return this.listStore.indexOf(ele)
 }
-function clearAll(){}
-function findItem(){}
+function clearAll(){
+    return this.listStore = []
+}
+function findItem(ele){
+    return this.listStore.indexOf(ele)
+}
 function display(){
     return this.listStore.toString()
 }
-function insertEle(){}
-function removeEle(){}
+function insertEle(ele, pos){
+    this.listStore.splice(pos, 0, ele)
+
+}
+function removeEle(ele){
+   let index = this.listStore.indexOf(ele)
+   this.listStore.splice(index, 1)
+}
+
 function frontEle(){}
 function endEle(){}
 function prevEle(){}
@@ -43,4 +54,9 @@ let myList  = new List()
 myList.append(90)
 myList.append(20)
 myList.append(45)
+myList.append(20)
+myList.insert(30, 2)
+myList.remove(30)
+console.log(myList.find(90))
+
 console.log(myList.display().toString())
