@@ -11,7 +11,7 @@ console.log(`Movie Project`)
 
 //     }
 // } )
-let movies = fs.readFileSync(`movie_file.txt`, `utf8`).split(`\n`)
-console.log(movies)
 // let movies2 = fs.ReadStream(`movie_file.txt`, `utf8`)
 // console.log(movies2)
+let movies = fs.readFileSync(`movie_file.txt`, `utf8`).split(`\n`)
+console.log(movies)
