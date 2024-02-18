@@ -19,13 +19,19 @@ function List(){
 }
 
 function appendOne(ele){
-    return this.listStore.push(ele)
+    this.listStore.push(ele)
+    size++
 }
+//OR 
+function appendOne1(ele){
+    this.listStore[size++] = ele
+} 
 function currPos(ele){
 return this.listStore.indexOf(ele)
 }
 function clearAll(){
-    return this.listStore = []
+     this.listStore = []
+     this.size = this.pos = 0
 }
 function findItem(ele){
     return this.listStore.indexOf(ele)

@@ -15,3 +15,28 @@ console.log(`Movie Project`)
 // console.log(movies2)
 let movies = fs.readFileSync(`movie_file.txt`, `utf8`).split(`\n`)
 console.log(movies)
+
+function displayList(list){
+    for(let i = 0; i<list.length; i++){
+        if(list[i] == Customer){
+            console.log(`Name`, Customer[`name`], `Movie`, Customer[`movie`])
+        }
+        console.log(list[i])
+    }
+}
+let Customer = {name: `Ikendu`, movie: `Hero makers`}
+
+displayList(movies)
+
+const insertLarger = (item, list) =>{
+    for(let i = 0; i < list.length; i++){
+        if(list[i]<item ){
+            list.splice(i, 0, item) 
+        }
+    }
+    return list
+}
+
+console.log(insertLarger(39, [21, 9, 10,12, 45, ]))
+
+
