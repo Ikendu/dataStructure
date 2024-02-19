@@ -28,15 +28,15 @@ let Customer = {name: `Ikendu`, movie: `Hero makers`}
 
 displayList(movies)
 
-const insertLarger = (item, list) =>{
+const insertLarger = (list, item) =>{
     for(let i = 0; i < list.length; i++){
-        if(list[i]<item ){
-            list.splice(i, 0, item) 
+        if(item > list[i]){
+            list.splice(i+1, 0, item)
+            return list
         }
     }
-    return list
 }
 
-console.log(insertLarger(39, [21, 9, 10,12, 45, ]))
+console.log(insertLarger([60, 90, 100,102,30, 45, ], 39))
 
 
