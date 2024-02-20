@@ -84,19 +84,19 @@ function contains(item){
 }
 
 let newList = new List()
-newList.append(`Henry`)
-newList.append(`Ikendu`)
-newList.append(`Aku`)
-newList.insert(`Chibundu`, 1)
-console.log(newList.listSize)
-newList.end()
+// newList.append(`Henry`)
+// newList.append(`Ikendu`)
+// newList.append(`Aku`)
+// newList.insert(`Chibundu`, 1)
+// console.log(newList.listSize)
+// newList.end()
 //newList.clear()
-console.log(newList.view())
-newList.prev()
-newList.currPos()
-console.log(newList.pos)
+// console.log(newList.view())
+// newList.prev()
+// newList.currPos()
+// console.log(newList.pos)
 
-console.log(newList.length())
+// console.log(newList.length())
 
 //working on the movie list
 const createFile = (file) => {
@@ -112,7 +112,16 @@ let movieList = new List()
 for(let i = 0; i < movies.length; i++){
     movieList.append(movies[i])
 }
-movieList.next()
-movieList.next()
+console.log(movieList.getElement())
 console.log(movieList.pos)
 
+//Display list
+const viewMovieList = (file) => {
+    // for(file.front(); file.currPos() < file.length(); file.next()){
+    // console.log(file.getElement())
+    // }
+    for(let i = 0; i < movies.length; i++){
+        console.log(movies[i])
+    }
+}
+viewMovieList(movieList)
