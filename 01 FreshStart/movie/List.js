@@ -1,4 +1,5 @@
-const { it } = require("node:test")
+
+const fs =  require("node:fs")
 
 function List(){
     this.listSize = 0
@@ -96,3 +97,22 @@ newList.currPos()
 console.log(newList.pos)
 
 console.log(newList.length())
+
+//working on the movie list
+const createFile = (file) => {
+    let fileArray = fs.readFileSync(file, `utf8`).split(`\n`)
+    return fileArray
+}
+
+const movies = createFile(`movie_file.txt`)
+//console.log(movies)
+
+let movieList = new List()
+
+for(let i = 0; i < movies.length; i++){
+    movieList.append(movies[i])
+}
+movieList.next()
+movieList.next()
+console.log(movieList.pos)
+

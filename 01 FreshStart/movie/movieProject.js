@@ -16,6 +16,12 @@ console.log(`Movie Project`)
 let movies = fs.readFileSync(`movie_file.txt`, `utf8`).split(`\n`)
 console.log(movies)
 
+//Using a funtion
+export const createFile = (file) => {
+    let createdFile = fs.readFileSync(file, `utf8`).split(`\n`)
+    return createdFile
+}
+
 function displayList(list){
     for(let i = 0; i<list.length; i++){
         if(list[i] == Customer){
@@ -39,18 +45,3 @@ const insertLarger = (list, item) =>{
 
 console.log(insertLarger([60, 90, 100,102,30, 45, ], 39))
 
-//list of person class
-
-function Person(name, gender){
-    this.name = name
-    this.gender = gender
-    this.allPersons = []
-    //this.addPerson = addPerson
-    this.lists = lists  
-}
-function lists(item){
-    this.allPersons.push(item)
-    return this.allPersons
-}
-let person1 = new Person(`Ezego`, `male`)
-console.log(lists(person1))
