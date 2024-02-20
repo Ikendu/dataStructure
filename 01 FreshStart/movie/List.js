@@ -120,8 +120,26 @@ const viewMovieList = (file) => {
     // for(file.front(); file.currPos() < file.length(); file.next()){
     // console.log(file.getElement())
     // }
-    for(let i = 0; i < movies.length; i++){
-        console.log(movies[i])
+    for(let i = 0; i < file.length; i++){
+        console.log(file[i])
     }
 }
-viewMovieList(movieList)
+//viewMovieList(movies)
+
+const viewDeepList = (file) => {
+    for(let i = 0; i < file.length; i++){
+        if(file[i] instanceof customer ){
+            console.log(`Customer Name`, file[i].name, `Movie rented`, file[i].movie)
+        } else {
+            console.log(file[i])
+        }
+
+    }
+}
+const customer = []
+
+const rentMovie = (name, movie, movieList, customers) => {
+    
+}
+
+viewDeepList(movies)
