@@ -39,4 +39,18 @@ const insertLarger = (list, item) =>{
 
 console.log(insertLarger([60, 90, 100,102,30, 45, ], 39))
 
+//list of person class
 
+function Person(name, gender){
+    this.name = name
+    this.gender = gender
+    this.allPersons = []
+    //this.addPerson = addPerson
+    this.lists = lists  
+}
+function lists(item){
+    this.allPersons.push(item)
+    return this.allPersons
+}
+let person1 = new Person(`Ezego`, `male`)
+console.log(lists(person1))
