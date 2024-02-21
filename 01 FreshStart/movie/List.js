@@ -100,7 +100,7 @@ let newList = new List()
 
 //working on the movie list
 const createFile = (file) => {
-    let fileArray = fs.readFileSync(file, `utf8`).split(`\n`)
+    let fileArray = fs.readFileSync(file, `utf8`).split(`\r\n`).sort()
     return fileArray
 }
 
@@ -124,22 +124,37 @@ const viewMovieList = (file) => {
         console.log(file[i])
     }
 }
-//viewMovieList(movies)
+viewMovieList(movies)
 
-const viewDeepList = (file) => {
-    for(let i = 0; i < file.length; i++){
-        if(file[i] instanceof customer ){
-            console.log(`Customer Name`, file[i].name, `Movie rented`, file[i].movie)
-        } else {
-            console.log(file[i])
+// const viewDeepList = (file) => {
+//     for(let i = 0; i < file.length; i++){
+//         if(file[i] instanceof customer ){
+//             console.log(`Customer Name`, file[i].name, `Movie rented`, file[i].movie)
+//         } else {
+//             console.log(file[i])
+//         }
+
+//     }
+// }
+//viewDeepList(movies)
+
+let customers = []
+let rentedMovies = []
+
+const rentMovie = (name, movie, movies, customers) => {
+    for(let i = 0; i < movies.length; i++){
+        if(movies[i] == movie){
+            customers.push({name, movie: movies[i]})
+            rentedMovies.push(movies[i])
+            movies.splice(i, 1)
+          
         }
-
     }
-}
-const customer = []
-
-const rentMovie = (name, movie, movieList, customers) => {
-    
+    console.log('Remaining Movies', movies, 'Current customers', customers, 'Rented Movies', rentedMovies)       
 }
 
-viewDeepList(movies)
+rentMovie('Ikenna', 'Fight Club', movies, customers )
+rentMovie('Ebere', 'Star Wars: Episode V - The Empire Strikes Back', movies, customers )
+rentMovie('Akuoma', 'Goodfellas', movies, customers )
+rentMovie('Aniede', 'Seven Samurai', movies, customers )
+
