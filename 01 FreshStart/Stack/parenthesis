@@ -1,0 +1,34 @@
+const parenthesis = (exp) => {
+  let store = [];
+  for (let i of exp) {
+    if (i == "{" || i == "[" || i == "(") {
+      store.push(i);
+    } else {
+      let last = store.pop();
+      if (last === "{" && i !== "}") return "invalid";
+      else if (last === "[" && i !== "]") return "invalid";
+      else if (last === "(" && i !== ")") return "invalid";
+    }
+  }
+  if (store.length == 0) return "valid";
+  else return "invalid";
+};
+
+console.log(parenthesis("(([[[]]]))[[]]({{{[(())]}}}"));
+
+const parentheses = (exp) => {
+  let store = [];
+  let map = { "(": ")", "{": "}", "[": "]" };
+
+  for (let i of exp) {
+    if (map.hasOwnProperty(i)) store.push(i);
+    else {
+      let last = store.pop();
+      if (map[last] != i) return "invalid";
+    }
+  }
+  if (store.length === 0) return "valid";
+  else return "invalid";
+};
+
+console.log(parentheses("(([[[]]]))[[]]{{{[(())]}}}"));

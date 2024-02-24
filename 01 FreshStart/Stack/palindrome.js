@@ -9,3 +9,13 @@ const palindrome = (str) => {
 };
 
 console.log(palindrome(`10001`));
+
+const palindrome1 = (str) => {
+  str = str.match(/[\w]/g);
+  let newStr = "";
+  while (str.length > 0) {
+    newStr += str.pop();
+  }
+  return newStr;
+};
+console.log(palindrome1("h=-0=ldjdsfjhsk"));
