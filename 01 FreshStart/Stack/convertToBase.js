@@ -1,15 +1,19 @@
 const convertToBase = (num, base) => {
     let remStore = []
-    let ans = []
-    while (num > 0){
-       let rem =  num % base
-       remStore.push(rem)
-       num = Math.floor(num / base)
+    let ans = ``
+    let checker = []
+    while (num > 0){ 
+       remStore.push(num % base)
+       num = Math.floor(num /= base)
     } 
-    for(let i = 0; i < remStore.length; i++){
-        ans.push(remStore.pop())
+    // while(remStore.length > 0){
+    //     ans += (remStore.pop())
+    // }
+    for(let i = remStore.length-1; i >= 0; i--){
+        checker.push(remStore.pop())
     }
-    return ans
+    console.log(ans, checker)
 }
 
 console.log(convertToBase(845, 2))
+console.log(convertToBase(32, 2))
