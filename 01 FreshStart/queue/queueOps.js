@@ -35,3 +35,23 @@ function print() {
 
 let dancers = fs.readFileSync("items.txt", "utf8").split("\r\n");
 console.log(dancers);
+
+const dancer = (name, sex) => {
+  return { name, sex };
+};
+
+let males = [];
+let females = [];
+
+const getDancers = (male, female) => {
+  for (let i = 0; i < dancers.length; i++) {
+    let newDancer = dancers[i].split(" ");
+    let sex = newDancer[0];
+    let name = newDancer[1];
+    if (sex == "M") male.push({ name, sex });
+    else female.push({ name, sex });
+  }
+};
+getDancers(males, females);
+console.log(males);
+console.log(females);
