@@ -55,3 +55,22 @@ const getDancers = (male, female) => {
 getDancers(males, females);
 console.log(males);
 console.log(females);
+
+const callDancers = (males, females) => {
+  let male = males.shift();
+  let female = females.shift();
+
+  return { male, female };
+};
+console.log("first set dancers...");
+console.log(callDancers(males, females));
+console.log("second set dancers...");
+console.log(callDancers(males, females));
+console.log("third set dancers...");
+console.log(callDancers(males, females));
+console.log("fourth set dancers...");
+console.log(callDancers(males, females));
+console.log("fifth set dancers...");
+console.log(callDancers(males, females));
+console.log("sixth set dancers...");
+console.log(callDancers(males, females));
