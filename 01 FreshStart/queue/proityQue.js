@@ -15,7 +15,7 @@ const priority = (array) => {
       priority = i;
     }
   }
-  return array.slice(priority, priority + 1);
+  return array.splice(priority, 1);
 };
 
 console.log(priority(patients));
