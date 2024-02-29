@@ -27,8 +27,8 @@ function back() {
 }
 function print() {
   let readings = "";
-  for (let i = 0; i < queueStore.length; i++) {
-    readings += queueStore + "\n";
+  for (let i = 0; i < this.queueStore.length; i++) {
+    readings += this.queueStore + "\n";
   }
   return readings;
 }
@@ -74,3 +74,25 @@ console.log("fifth set dancers...");
 console.log(callDancers(males, females));
 console.log("sixth set dancers...");
 console.log(callDancers(males, females));
+
+//priority queue
+function Patient(name, code){
+  this.name = name
+  this.code = code
+}
+
+function dequeue(){
+  let priority = this.queueStore[0].code
+  
+  for(let i = 0; i < this.queueStore.length; i++){
+    if(priority < this.queueStore[i].code) {
+      priority = i
+    }
+    return this.queueStore.splice(priority, 1)
+  }
+}
+
+let ed = new Queue()
+let p = new Patient(`Chigbo`, 3)
+ed.enqueue(p)
+console.log(ed.print())
