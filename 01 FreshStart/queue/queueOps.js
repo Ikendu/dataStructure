@@ -92,7 +92,19 @@ function dequeue(){
   }
 }
 
+function print(){
+  let items = ``
+  for(let i = 0; i < this.queueStore.length; i++){
+    items += `Name: ` + this.queueStore[i].name + ` Code: ` + this.queueStore[i].code + `\n` 
+  }
+  return items
+}
+
 let ed = new Queue()
 let p = new Patient(`Chigbo`, 3)
+ed.enqueue(p)
+p = new Patient(`Chike`, 2)
+ed.enqueue(p)
+p = new Patient(`Oma`, 1)
 ed.enqueue(p)
 console.log(ed.print())
