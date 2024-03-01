@@ -20,3 +20,20 @@ function find(item) {
   }
   return curNode;
 }
+
+function insert(element, item) {
+  let newNode = new Node(element);
+  let findItem = this.find(item);
+
+  newNode.next = findItem.next;
+  findItem.next = newNode;
+}
+
+function display() {
+  let currNode = this.head;
+
+  while (currNode.next != null) {
+    console.log(currNode.next.element);
+    currNode = currNode.next;
+  }
+}
