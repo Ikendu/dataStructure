@@ -45,3 +45,11 @@ function findPrev(item) {
   }
   return currNode;
 }
+
+function remove(item) {
+  let prev = findPrev(item);
+
+  while (prev.next.element != null) {
+    prev.next = prev.next.next;
+  }
+}
