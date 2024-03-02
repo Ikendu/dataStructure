@@ -84,10 +84,20 @@ function show() {
 }
 
 function moveBack(num) {
-  let currNode = this.advance(this.pos);
   let counter = 0;
+  let currNode = this.head;
+  let backCount = 0;
 
-  return currNode;
+  while (this.pos != counter) {
+    currNode = currNode.next;
+    counter++;
+  }
+  while (num != backCount) {
+    currNode.next = currNode;
+    backCount++;
+  }
+
+  return currNode.element;
 }
 
 let cities = new LinkedList();
@@ -104,7 +114,7 @@ cities.remove(`Agu`);
 cities.display();
 
 console.log(`------------------------`);
-console.log(cities.advance(2));
+console.log(cities.advance(4));
 console.log(cities.show());
-// console.log(cities.moveBack());
+console.log(cities.moveBack(2));
 console.log(cities.pos);
