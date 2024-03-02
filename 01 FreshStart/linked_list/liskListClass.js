@@ -10,6 +10,7 @@ function LinkedList() {
   this.display = display;
   this.findPrev = findPrev;
   this.remove = remove;
+  this.advance = advance;
 }
 
 function find(item) {
@@ -40,8 +41,8 @@ function display() {
 
 function findPrev(item) {
   let currNode = this.head;
-  while ((currNode.next != null) && (currNode.next.element != item)) {
-    currNode = currNode.next
+  while (currNode.next != null && currNode.next.element != item) {
+    currNode = currNode.next;
   }
   return currNode;
 }
@@ -53,14 +54,27 @@ function remove(item) {
     prev.next = prev.next.next;
   }
 }
+function advance(num) {
+  let currNode = this.head;
+  let counter = 0;
+  while (currNode.next != null && counter <= num) {
+    currNode = currNode.next;
+    counter++;
+  }
+  return currNode.element;
+}
 
-let cities = new LinkedList()
-cities.insert(`Enugu`, `head`)
-cities.insert(`Aba`, `Enugu`)
-cities.insert(`Agu`, `Aba`)
-cities.insert(`Ebonyi`, `Aba`)
-cities.insert(`Ihuma`, `Enugu`)
-cities.display() 
-console.log(`-----------------------`)
-cities.remove(`Agu`)
-cities.display()
+let cities = new LinkedList();
+cities.insert(`Enugu`, `head`);
+cities.insert(`Aba`, `Enugu`);
+cities.insert(`Agu`, `Aba`);
+cities.insert(`Ebonyi`, `Aba`);
+cities.insert(`Ihuma`, `Enugu`);
+
+cities.display();
+console.log(`-----------------------`);
+cities.remove(`Agu`);
+cities.display();
+
+console.log(`------------------------`);
+console.log(cities.advance(1));
