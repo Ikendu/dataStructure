@@ -55,21 +55,33 @@ hasher.insert("Major",`hjhfdjfh`);
 hasher.insert("Hero", `kritugfgh`);
 
 console.log(`TRY GETTER`, hasher.get(`kritugfgh`))
-// var someNames = [
-//   "David",
-//   "Jennifer",
-//   "Donnie",
-//   "Raymond",
-//   "Cynthia",
-//   "Mike",
-//   "Clayton",
-//   "Danny",
-//   "Jonathan",
-// ];
-// for (let i = 0; i < someNames.length; i++) {
-//   hasher.insert(someNames[i]);
-// }
+var someNames = [
+  "David",
+  "Jennifer",
+  "Donnie",
+  "Raymond",
+  "Cynthia",
+  "Mike",
+  "Clayton",
+  "Danny",
+  "Jonathan",
+];
+var keys = [
+  "3654dfgd",
+  "dfjj",
+  "67574",
+  "fhjty5656",
+  "454fgfg",
+  "9898loio",
+  "2435hghgj",
+  "56778jghjg",
+  "4656566hfhh",
+];
+for (let i = 0; i < someNames.length; i++) {
+  hasher.insert(someNames[i], keys[i] );
+}
 hasher.display();
+console.log(hasher.get("56778jghjg"))
 
 
 // console.log(hasher.hashfunc("boy"));
