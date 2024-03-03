@@ -4,7 +4,7 @@ function Hash() {
   this.betterHash = betterHash;
   this.display = display;
   this.insert = insert;
-  //   this.get = get;
+     this.get = get;
 }
 
 function hashfunc(data) {
@@ -15,8 +15,8 @@ function hashfunc(data) {
   return total % this.table.length;
 }
 
-function insert(data) {
-  let pos = this.hashfunc(data);
+function insert(data, key) {
+  let pos = this.hashfunc(key);
   if (this.table[pos]) return (this.table[++pos] = data);
   else return (this.table[pos] = data);
 }
@@ -45,24 +45,31 @@ function betterHash(data) {
   return parseInt(total);
 }
 
-let hasher = new Hash();
-hasher.insert("Helen");
-hasher.insert("Major");
-hasher.insert("Hero");
-var someNames = [
-  "David",
-  "Jennifer",
-  "Donnie",
-  "Raymond",
-  "Cynthia",
-  "Mike",
-  "Clayton",
-  "Danny",
-  "Jonathan",
-];
-for (let i = 0; i < someNames.length; i++) {
-  hasher.insert(someNames[i]);
+function get(key){
+  return this.table[this.hashfunc(key)]
 }
+
+let hasher = new Hash();
+hasher.insert("Helen", `sdgdgdg`);
+hasher.insert("Major",`hjhfdjfh`);
+hasher.insert("Hero", `kritugfgh`);
+
+console.log(`TRY GETTER`, hasher.get(`kritugfgh`))
+// var someNames = [
+//   "David",
+//   "Jennifer",
+//   "Donnie",
+//   "Raymond",
+//   "Cynthia",
+//   "Mike",
+//   "Clayton",
+//   "Danny",
+//   "Jonathan",
+// ];
+// for (let i = 0; i < someNames.length; i++) {
+//   hasher.insert(someNames[i]);
+// }
 hasher.display();
 
-console.log(hasher.hashfunc("boy"));
+
+// console.log(hasher.hashfunc("boy"));
