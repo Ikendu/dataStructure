@@ -21,11 +21,56 @@ function studensReg(arr){
 }
 console.log(studensReg(new Array(20)))
 
-function HashClass(num){
-    this.table = new Array(num)
-
+function HashClass(){
+    this.table = new Array(137)
     this.insert = insert
-    this.get = get
+    // this.get = get
     this.hashFunc = hashFunc
     this.show = show
 }
+function hashFunc(data){
+    let hash = 0
+    const HB = 37
+
+    for(let i = 0; i < data.length; i++){
+        hash += HB * hash + data.charCodeAt(i)
+    }
+    return hash % this.table.length
+}
+
+function insert(data){
+    let hashNum = this.hashFunc(data)
+    //let curr = []
+    
+    if(this.table[hashNum]) this.table[++hashNum] = data
+    else this.table[hashNum] = data 
+}
+
+function show(){
+    for(let key in this.table ){
+        if(this.table[key]) console.log(key+ ` ---> ` +this.table[key])
+    }
+}
+
+let students = new HashClass()
+students.insert(`Hector`)
+students.insert(`Victor`)
+students.insert(`Rector`)
+students.insert(`Icon`)
+students.insert(`Star`)
+students.insert(`Hector`)
+students.insert(`Victor`)
+students.insert(`Rector`)
+students.insert(`Icon`)
+students.insert(`Star`)
+
+let stuRegs = new HashClass()
+let regNums = studensReg(new Array(20))
+
+for(let i = 0; i < regNums.length; i++ ){
+    stuRegs.insert(regNums[i].substring(0, 8))
+}
+
+students.show()
+stuRegs.show()
+
