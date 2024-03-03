@@ -1,6 +1,7 @@
 function Hash() {
   this.table = new Array(137);
   this.hashfunc = hashfunc;
+  this.betterHash = betterHash;
   this.display = display;
   this.insert = insert;
   //   this.get = get;
@@ -16,7 +17,8 @@ function hashfunc(data) {
 
 function insert(data) {
   let pos = this.hashfunc(data);
-  this.table[pos] = data;
+  if (this.table[pos]) return (this.table[++pos] = data);
+  else return (this.table[pos] = data);
 }
 
 function display() {
@@ -25,6 +27,22 @@ function display() {
       console.log(i + " --> " + this.table[i]);
     }
   }
+}
+
+function betterHash(data) {
+  let total = 0;
+  const HB = 37;
+
+  for (let i = 0; i < data.length; i++) {
+    total += HB * data.charCodeAt(i);
+  }
+  total = total % this.table.length;
+
+  if (total < 0) {
+    total += this.table.length - 1;
+  }
+  //   console.log(total + " to " + data);
+  return parseInt(total);
 }
 
 let hasher = new Hash();
