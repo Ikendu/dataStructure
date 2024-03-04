@@ -1,0 +1,29 @@
+//set functions
+
+//set insertion
+let myData = [20, 50, 'melt', 'felt', 'felix']
+let myArr =  [20, 50, 90, 'melt', 'Berry', 'felix']
+const insert = (data, arr) => {
+    let dataStore = new Set(arr)
+    if(arr.indexOf(data) < 0){
+        arr.push(data)
+    } else {
+        return 'data already in the store'
+    }
+    return arr
+}
+console.log(insert('heel', myData))
+console.log(insert('heel',myData ))
+console.log(insert('good', myData))
+
+//intersection of set
+const intersection = (arr1, arr2) => {
+    let newArr = []
+    for(let key of arr1){
+        if(arr2.indexOf(key) > -1){
+            newArr.push(key)
+        }
+    }
+    return newArr
+}
+console.log(intersection(myArr, myData))
