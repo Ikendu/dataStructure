@@ -1,7 +1,7 @@
 //set functions
 
 //set insertion
-let myData = [20, 50, 'melt', 'felt', 'felix']
+let myData = [20, 50, 'melt', 'felt', 'felix', 50, 30]
 let myArr =  [20, 50, 90, 'melt', 'Berry', 'felix']
 const insert = (data, arr) => {
     let dataStore = new Set(arr)
@@ -12,9 +12,9 @@ const insert = (data, arr) => {
     }
     return arr
 }
-console.log(insert('heel', myData))
-console.log(insert('heel',myData ))
-console.log(insert('good', myData))
+// console.log(insert('heel', myData))
+// console.log(insert('heel',myData ))
+// console.log(insert('good', myData))
 
 //intersection of set
 const intersection = (arr1, arr2) => {
@@ -26,4 +26,34 @@ const intersection = (arr1, arr2) => {
     }
     return newArr
 }
-console.log(intersection(myArr, myData))
+// console.log(intersection(myArr, myData))
+
+//union of set
+const union = (arr1, arr2) => {
+    arr1 = [...new Set(arr1)]
+
+    for(let key of arr2){
+        if(arr1.indexOf(key) < 0){
+            arr1.push(key)
+        }
+    }
+    return arr1
+}
+
+console.log(union(myArr, myData))
+
+const difference = (arr1, arr2) => {
+    let newArr = []
+    if(arr1.length > arr2.length){
+       for(let key of arr1){
+        if(arr2.indexOf(key) < 0){
+            newArr.push(key)
+        }
+    } 
+    } else {
+        return "Major store is less than minor store"
+    }
+    
+    return newArr
+}
+console.log(difference(myData, myArr))
