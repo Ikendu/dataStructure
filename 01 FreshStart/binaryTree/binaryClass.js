@@ -12,6 +12,8 @@ function BST() {
   this.insert = insert;
   this.root = null;
   this.inorder = inorder;
+  this.preOrder = preOrder;
+  this.postOrder = postOrder;
 }
 
 function insert(data) {
@@ -40,6 +42,7 @@ function insert(data) {
     }
   }
 }
+
 function inorder(node) {
   if (node) {
     inorder(node.left);
@@ -47,10 +50,20 @@ function inorder(node) {
     inorder(node.right);
   }
 }
+
+function preOrder(node) {
+  if (node) {
+    console.log(node.show() + " ");
+    preOrder(node.left);
+    preOrder(node.right);
+  }
+}
+
 let bstree = new BST();
 bstree.insert(23);
 bstree.insert(64);
 bstree.insert(12);
 bstree.insert(78);
 
-inorder(bstree.root);
+bstree.inorder(bstree.root);
+bstree.preOrder(bstree.root);
