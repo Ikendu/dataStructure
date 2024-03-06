@@ -17,7 +17,7 @@ function BST() {
 function insert(data) {
   let node = new Node(data, null, null);
   if (this.root == null) {
-    this.root == node;
+    this.root = node;
   } else {
     let current = this.root;
     let parent;
@@ -40,3 +40,17 @@ function insert(data) {
     }
   }
 }
+function inorder(node) {
+  if (node) {
+    inorder(node.left);
+    console.log(node.show() + " ");
+    inorder(node.right);
+  }
+}
+let bstree = new BST();
+bstree.insert(23);
+bstree.insert(64);
+bstree.insert(12);
+bstree.insert(78);
+
+inorder(bstree.root);
