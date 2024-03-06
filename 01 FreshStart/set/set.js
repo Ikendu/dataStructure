@@ -56,4 +56,33 @@ const difference = (arr1, arr2) => {
     
     return newArr
 }
-console.log(difference(myData, myArr))
+// console.log(difference(myData, myArr))
+
+const remove = (data, arr) => {
+    let index = arr.indexOf(data)
+    if(index > -1){
+        arr.splice(index, 1)
+    }
+    return arr
+}
+console.log('REMOVE 50', remove(50, myData))
+
+function node(element){
+    element = element
+    next = null
+}
+let Lists = {
+    element: 'head',
+    next: null
+}
+
+function add(element,  List){
+    let newNode = node(element)
+    while(List.next != null) {
+        newNode.next = List.next
+        List.next = newNode
+    }   
+    return List
+}
+
+console.log(add('baby', Lists))
