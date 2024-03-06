@@ -59,6 +59,14 @@ function preOrder(node) {
   }
 }
 
+function postOrder(node) {
+  if (node) {
+    postOrder(node.left);
+    postOrder(node.right);
+    console.log(node.show() + " ");
+  }
+}
+
 let bstree = new BST();
 bstree.insert(23);
 bstree.insert(64);
@@ -66,4 +74,7 @@ bstree.insert(12);
 bstree.insert(78);
 
 bstree.inorder(bstree.root);
+console.log(".....................");
 bstree.preOrder(bstree.root);
+console.log(".....................");
+postOrder(bstree.root);
