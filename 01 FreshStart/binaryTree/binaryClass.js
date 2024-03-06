@@ -14,6 +14,8 @@ function BST() {
   this.inorder = inorder;
   this.preOrder = preOrder;
   this.postOrder = postOrder;
+  this.minimum = minimum;
+  this.maximum = maximum;
 }
 
 function insert(data) {
@@ -67,14 +69,40 @@ function postOrder(node) {
   }
 }
 
+//minimum and maximum value in a BST
+//minimumm
+function minimum() {
+  let current = this.root;
+  while (current.left) {
+    current = current.left;
+  }
+  console.log(current.data);
+  return current.data;
+}
+//maximum
+function maximum() {
+  let current = this.root;
+  while (current.right) {
+    current = current.right;
+  }
+  console.log(current.data);
+  return current.data;
+}
+
 let bstree = new BST();
 bstree.insert(23);
 bstree.insert(64);
 bstree.insert(12);
 bstree.insert(78);
+bstree.insert(99);
+bstree.insert(3);
 
 bstree.inorder(bstree.root);
 console.log(".....................");
 bstree.preOrder(bstree.root);
 console.log(".....................");
 postOrder(bstree.root);
+console.log(".....................");
+bstree.minimum();
+console.log(".....................");
+bstree.maximum();
