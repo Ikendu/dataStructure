@@ -103,6 +103,19 @@ function findValue(data) {
   return current.data;
 }
 
+//REDO
+function remove(data) {
+  return root = removeNode(this.root, data)
+}
+function removeNode(node, data) {
+  if (node == null) {
+    return null
+  }
+  if (data == node.data) {
+    
+  }
+}
+
 let students = new BST();
 students.insert("Ada");
 students.insert("Obi");
