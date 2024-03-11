@@ -13,6 +13,7 @@ function BST() {
   this.insert = insert;
   this.root = null;
   this.inorder = inorder;
+  this.findMin = findMin;
 }
 
 function insert(data) {
@@ -63,6 +64,16 @@ function postorder(node) {
   }
 }
 
+//FIND THE MINIMUM DATA
+function findMin() {
+  let current = this.root;
+  while (current.left !== null) {
+    current = current.left;
+  }
+  console.log(current.data);
+  return current.data;
+}
+
 let students = new BST();
 students.insert("Ada");
 students.insert("Obi");
@@ -76,3 +87,5 @@ console.log("preorder..............");
 preOrder(students.root);
 console.log("postorder...............");
 postorder(students.root);
+console.log("Get the minimum..........");
+students.findMin();
