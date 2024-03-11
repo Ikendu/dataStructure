@@ -105,14 +105,28 @@ function findValue(data) {
 
 //REDO
 function remove(data) {
-  return root = removeNode(this.root, data)
+  return (root = removeNode(this.root, data));
 }
 function removeNode(node, data) {
   if (node == null) {
-    return null
+    return null;
   }
   if (data == node.data) {
-    
+    if (node.right == null && node.left == null) {
+      return null;
+    }
+    if (node.left == null) return node.right;
+    if (node.right == null) return node.left;
+    let tempNode = findMin(this.right);
+    node.data = tempNode.data;
+    node.right = removeNode(node.right, tempNode.data);
+    return node;
+  } else if (data < node.data) {
+    node.left = removeNode(node.left, data);
+    return node;
+  } else {
+    node.righ = removeNode(node.right, data);
+    return node;
   }
 }
 
