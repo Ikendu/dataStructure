@@ -14,6 +14,7 @@ function BST() {
   this.root = null;
   this.inorder = inorder;
   this.findMin = findMin;
+  this.findMax = findMax;
 }
 
 function insert(data) {
@@ -74,6 +75,16 @@ function findMin() {
   return current.data;
 }
 
+//FIND THE MAXIMUM DATA
+function findMax() {
+  let current = this.root;
+  while (current.right) {
+    current = current.right;
+  }
+  console.log(current.data);
+  return current.data;
+}
+
 let students = new BST();
 students.insert("Ada");
 students.insert("Obi");
@@ -89,3 +100,5 @@ console.log("postorder...............");
 postorder(students.root);
 console.log("Get the minimum..........");
 students.findMin();
+console.log("Get the maximum value....");
+students.findMax();
