@@ -16,6 +16,7 @@ function BST() {
   this.findMin = findMin;
   this.findMax = findMax;
   this.findValue = findValue;
+  this.remove = remove;
 }
 
 function insert(data) {
@@ -103,29 +104,34 @@ function findValue(data) {
   return current.data;
 }
 
-//REDO
+//REMOVE DATA
+function getSmallest(current) {
+  // let current = this.root;
+  while (current.left !== null) {
+    current = current.left;
+  }
+  console.log(current.data);
+  return current.data;
+}
+
 function remove(data) {
-  return (root = removeNode(this.root, data));
+  root = removeNode(this.root, data);
 }
 function removeNode(node, data) {
-  if (node == null) {
-    return null;
-  }
+  if (node == null) return null;
   if (data == node.data) {
-    if (node.right == null && node.left == null) {
-      return null;
-    }
+    if (node.left == null && node.right == null) return null;
     if (node.left == null) return node.right;
     if (node.right == null) return node.left;
-    let tempNode = findMin(this.right);
-    node.data = tempNode.data;
+    let tempNode = getSmallest(node.right);
+    tempNode.data = node.data;
     node.right = removeNode(node.right, tempNode.data);
     return node;
   } else if (data < node.data) {
     node.left = removeNode(node.left, data);
     return node;
   } else {
-    node.righ = removeNode(node.right, data);
+    node.right = removeNode(node.right, data);
     return node;
   }
 }
@@ -150,3 +156,5 @@ students.findMax();
 console.log("Find a value.............");
 students.findValue("Okoro");
 students.findValue("Ekemaa");
+console.log("Test RemoveNode..........");
+console.log(students.remove("Obi"));
