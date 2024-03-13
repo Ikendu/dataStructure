@@ -34,5 +34,7 @@ network.addEdges(0, 4);
 network.addEdges(1, 3);
 network.addEdges(2, 1);
 network.addEdges(3, 4);
-// network.addEdges(0, 3);
+network.addEdges(0, 3);
+network.addEdges(2, 4);
+network.addEdges(1, 0);
 network.showGraph();
