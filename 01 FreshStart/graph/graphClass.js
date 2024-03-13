@@ -1,4 +1,4 @@
-function Vertex(label) {
+function Vertix(label) {
   this.label = label;
 }
 
@@ -10,11 +10,11 @@ function Graph(v) {
     this.adj[i] = [];
     this.adj[i].push(" ");
   }
-  this.addEdge = addEdge;
+  this.addEdges = addEdges;
   this.showGraph = showGraph;
 }
 
-function addEdge(v, w) {
+function addEdges(v, w) {
   this.adj[v].push(w);
   this.adj[w].push(v);
   this.edges++;
@@ -22,11 +22,9 @@ function addEdge(v, w) {
 
 function showGraph() {
   for (let i = 0; i < this.vertices; i++) {
-    console.log(i + " =>");
+    console.log(i + " => ");
     for (let j = 0; j < this.vertices; j++) {
-      if (adj[v][w] !== undefined) {
-        console.log(adj[v][w] + " ");
-      }
+      console.log(adj[i][j] + " ");
     }
     console.log();
   }
