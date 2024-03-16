@@ -157,4 +157,4 @@ console.log("Find a value.............");
 students.findValue("Okoro");
 students.findValue("Ekemaa");
 console.log("Test RemoveNode..........");
-console.log(students.remove("Obi"));
+console.log(students.remove("Hero"));

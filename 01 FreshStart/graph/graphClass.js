@@ -8,7 +8,7 @@ function Graph(v) {
   this.adj = [];
   for (let i = 0; i < this.vertices; i++) {
     this.adj[i] = [];
-    // this.adj[i].push("");
+    // this.adj[i].push(" ");
   }
   this.addEdges = addEdges;
   this.showGraph = showGraph;
@@ -44,6 +44,8 @@ function dfs(v) {
     }
   }
 }
+
+function bfs(s) {}
 
 let g = new Graph(5);
 g.addEdges(0, 3);
