@@ -28,6 +28,7 @@ function Graph(v) {
 
   this.bfs = bfs;
   this.showPath = showPath;
+  this.topSort = topSort;
 }
 
 //connect the edges of the graph
@@ -93,6 +94,36 @@ function showPath(v) {
   console.log(path);
 }
 
+function topSort() {
+  let store = [];
+  let visited = [];
+  for (let i = 0; i < this.vertices; i++) {
+    visited[i] = false;
+  }
+  for (let i = 0; i < this.vertices; i++){
+    if (!visited[i]) {
+      this.topsortHelper(i, visited, store)
+    }
+  }
+
+  for (let i = 0; i < this.vertices; i++){
+    if (!visited[i]) {
+      console.assert(visited[i])
+    }
+  }
+  // console.log(visited);
+}
+
+function topsortHelper(i, visited, store) {
+  visited[i] = true
+  for (let j of this.adj(i)) {
+    if (!visited[j]) {
+      this.topsortHelper(visited[j], visited, store)
+    }
+  }
+  store.push(i)
+}
+
 let g = new Graph(5);
 g.addEdges(0, 4);
 g.addEdges(0, 2);
@@ -103,3 +134,4 @@ g.showGraph();
 g.dfs(0);
 // g.bfs(0);
 g.showPath(4);
+g.topSort();
