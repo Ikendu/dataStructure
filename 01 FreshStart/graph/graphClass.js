@@ -29,6 +29,7 @@ function Graph(v) {
   this.bfs = bfs;
   this.showPath = showPath;
   this.topSort = topSort;
+  this.topsortHelper = topsortHelper;
 }
 
 //connect the edges of the graph
@@ -100,28 +101,28 @@ function topSort() {
   for (let i = 0; i < this.vertices; i++) {
     visited[i] = false;
   }
-  for (let i = 0; i < this.vertices; i++){
+  for (let i = 0; i < this.vertices; i++) {
     if (!visited[i]) {
-      this.topsortHelper(i, visited, store)
+      this.topsortHelper(i, visited, store);
     }
   }
 
-  for (let i = 0; i < this.vertices; i++){
-    if (!visited[i]) {
-      console.assert(visited[i])
+  for (let i = 0; i < store.length; i++) {
+    if (store[i] != false && store[i] != undefined) {
+      console.log(store[i]);
     }
   }
   // console.log(visited);
 }
 
 function topsortHelper(i, visited, store) {
-  visited[i] = true
-  for (let j of this.adj(i)) {
+  visited[i] = true;
+  for (let j in this.adj[i]) {
     if (!visited[j]) {
-      this.topsortHelper(visited[j], visited, store)
+      this.topsortHelper(visited[j], visited, store);
     }
   }
-  store.push(i)
+  store.push(i);
 }
 
 let g = new Graph(5);
