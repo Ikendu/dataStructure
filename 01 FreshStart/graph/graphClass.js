@@ -17,6 +17,7 @@ function Graph(v) {
   for (let i = 0; i < this.vertices; i++) {
     this.marked[i] = false;
   }
+  this.bfs = bfs;
 }
 
 function addEdges(v, w) {
@@ -45,7 +46,24 @@ function dfs(v) {
   }
 }
 
-function bfs(s) {}
+function bfs(s) {
+  let queue = [];
+  this.marked[s] = true;
+  queue.push(s);
+  while (queue.length > 0) {
+    let v = queue.shift();
+    if (v == undefined) {
+      console.log("Dept visited " + v);
+    }
+    for (let i of this.adj[v]) {
+      if (!this.marked[i]) {
+        this.edgeTo(i);
+        this.marked[i] = true;
+        queue.push(i);
+      }
+    }
+  }
+}
 
 let g = new Graph(5);
 g.addEdges(0, 3);
@@ -55,3 +73,4 @@ g.addEdges(2, 4);
 g.addEdges(4, 0);
 g.showGraph();
 g.dfs(0);
+g.bfs(0);
