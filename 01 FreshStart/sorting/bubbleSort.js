@@ -36,7 +36,7 @@ const bubbleSort = (arr) => {
   return arr;
 };
 
-let abc = randomNum(myArray, 20);
+let abc = randomNum(myArray, 40);
 
 // showItems(abc);
 console.log(bubbleSort(abc));
