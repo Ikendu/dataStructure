@@ -14,15 +14,19 @@ const random = (nums) => {
 };
 
 const selection = (arr) => {
-  for (let i = 0; i < arr.length; i++) {
+  let min;
+  for (let i = 0; i < arr.length - 1; i++) {
+    min = i;
     for (let j = i + 1; j < arr.length; j++) {
-      if (arr[j] > arr[j + 1]) {
-        j++;
+      if (arr[j] < arr[min]) {
+        min = j;
       }
     }
-    arr[i] = arr[j];
+    swap(arr, i, min);
   }
+  console.log(arr);
   return arr;
 };
 
-random(20);
+let myArray = random(20);
+selection(myArray);
