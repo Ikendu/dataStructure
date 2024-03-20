@@ -37,4 +37,4 @@ function array(num) {
   }
   return result;
 }
-console.log(mergeSort(array(30)));
+console.log(mergeSort(array(300000)));
