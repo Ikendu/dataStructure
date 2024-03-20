@@ -28,8 +28,6 @@ const selection = (arr) => {
   return arr;
 };
 
-let myArray = random(100000);
-
 //redoing other sorting algorithm for comparism
 const bubble = (arr) => {
   for (let i = 0; i < arr.length; i++) {
@@ -53,11 +51,19 @@ const insertion = (arr) => {
   return arr;
 };
 // measureing the time difference in bubble, selection and insertion sorts
+let myArray = random(100000);
+
 let startb = new Date().getTime();
-bubble(myArray);
+myArray.sort((a, b) => a - b);
 let endb = new Date().getTime();
 let diff = endb - startb;
 console.log("BUBBLE TIME DIFFERENCE", diff);
+
+// let startb = new Date().getTime();
+// bubble(myArray);
+// let endb = new Date().getTime();
+// let diff = endb - startb;
+// console.log("BUBBLE TIME DIFFERENCE", diff);
 
 // let startSele = new Date().getTime();
 // selection(myArray);
