@@ -1,4 +1,4 @@
-const merge = (rightA, leftA) => {
+const merge = (leftA, rightA) => {
   let left = 0;
   let right = 0;
   let result = [];
@@ -18,15 +18,23 @@ const merge = (rightA, leftA) => {
 };
 
 const mergeSort = (array) => {
-  if ((array, length < 2)) return array;
+  if (array.length < 2) return array;
 
   let mid = Math.floor(array.length / 2);
   let left = array.slice(0, mid);
-    let right = array.slice(mid);
-    
-    
+  let right = array.slice(mid);
+  let sorted;
 
-  return mid;
+  sorted = merge(mergeSort(left), mergeSort(right));
+
+  return sorted;
 };
 
-console.log(mergeSort([3, 1, 0, 5, 9, 10, 4]));
+function array(num) {
+  let result = [];
+  for (let i = 0; i < num; i++) {
+    result.push(Math.floor(Math.random() * num + 1));
+  }
+  return result;
+}
+console.log(mergeSort(array(30)));
