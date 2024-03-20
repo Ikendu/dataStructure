@@ -32,3 +32,4 @@ const insertionB = (arr) => {
 };
 
 insertionB(array);
+
