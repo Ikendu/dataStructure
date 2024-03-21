@@ -14,3 +14,14 @@ function listData(num) {
 }
 
 console.log(linear(44, listData(100)));
+
+function minimumValue(arr) {
+  let first = arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < first) first = arr[i];
+  }
+  return first;
+}
+
+console.log(minimumValue(listData(100)));
