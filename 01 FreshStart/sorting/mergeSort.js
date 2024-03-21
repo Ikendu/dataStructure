@@ -37,4 +37,20 @@ function array(num) {
   }
   return result;
 }
-console.log(mergeSort(array(300000)));
+console.log(mergeSort(array(3000000)));
+
+//redoing the merge sort
+
+function merge2(rightA, leftA) {
+  let left = 0;
+  let right = 0;
+  let result = [];
+
+  while (left < leftA.length && right < rightA.length) {
+    if (leftA[left] < rightA[right]) result.push(leftA[left++]);
+    else result.push(rightA[right++]);
+  }
+  let leftRm = leftA.slice(left);
+  let rightRm = rightA.slice(right);
+  result.concat(leftRm).concat(rightRm);
+}
