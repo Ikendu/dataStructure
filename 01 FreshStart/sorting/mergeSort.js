@@ -37,7 +37,7 @@ function array(num) {
   }
   return result;
 }
-console.log(mergeSort(array(3000000)));
+console.log(mergeSort(array(30000)));
 
 //redoing the merge sort
 
@@ -53,4 +53,16 @@ function merge2(rightA, leftA) {
   let leftRm = leftA.slice(left);
   let rightRm = rightA.slice(right);
   result.concat(leftRm).concat(rightRm);
+  return result;
 }
+
+function mergeSortB(array) {
+  let mid = Math.floor(array.length / 2);
+  let leftA = array.slice(0, mid);
+  let rightA = array.slice(mid);
+
+  let result = merge2(mergeSort(leftA), mergeSort(rightA));
+  return result;
+}
+let ans = mergeSortB(array(20000));
+console.log(ans);
