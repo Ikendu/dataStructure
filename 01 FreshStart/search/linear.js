@@ -25,3 +25,13 @@ function minimumValue(arr) {
 }
 
 console.log(minimumValue(listData(100)));
+
+function maximum(arr) {
+  let first = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > first) first = arr[i];
+  }
+  return first;
+}
+
+console.log(maximum(listData(100)));
