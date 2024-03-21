@@ -1,8 +1,6 @@
 //using quick sort for sorting is very fast
-
-function quickSort(array) {
-  if (array.length == 0) return [];
-
+const quickSort = (array) => {
+  if (array.length == []) return [];
   let lower = [];
   let higher = [];
   let pivot = array[0];
@@ -12,7 +10,7 @@ function quickSort(array) {
     else higher.push(array[i]);
   }
   return quickSort(lower).concat(pivot, quickSort(higher));
-}
+};
 
 function creatList(num) {
   let list = [];
@@ -22,6 +20,6 @@ function creatList(num) {
   return list;
 }
 
-let newList = creatList(1000000);
+let newList = creatList(10000);
 // console.log(newList);
 console.log(quickSort(newList));
