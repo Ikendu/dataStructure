@@ -4,8 +4,6 @@ function fibo(num) {
   else return fibo(num - 1) + fibo(num - 2);
 }
 
-console.log(fibo(31));
-
 //using dynamic programming
 function fiboD(num) {
   if (num < 2) return 1;
@@ -20,4 +18,26 @@ function fiboD(num) {
   }
   return store;
 }
-console.log(fiboD(2));
+//Another form of dynamic recursive calculation
+function fiboDyna(num) {
+  let last = 1;
+  let last2 = 1;
+  for (let i = 2; i < num; i++) {
+    result = last + last2;
+    last2 = last;
+    last = result;
+  }
+  return result;
+}
+//measuring time difference in using dynamic programming and recursion
+
+// let start = new Date().getTime();
+// console.log(fibo(40));
+// let end = new Date().getTime();
+// console.log(end - start);
+
+let start = new Date().getTime();
+// console.log(fiboD(40000));
+console.log(fiboDyna(30));
+let end = new Date().getTime();
+console.log(end - start);
