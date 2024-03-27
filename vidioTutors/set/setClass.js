@@ -1,55 +1,62 @@
 function mySet() {
-  this.store = [];
+  let store = [];
+
+  this.items = function () {
+    return store;
+  };
 
   this.has = function (value) {
-    if (this.store.indexOf(value) > -1) return true;
-    else return false;
+    return store.indexOf(value) !== -1;
   };
 
   this.add = function (value) {
-    if (!this.has(value)) this.store.push(value);
+    if (!this.has(value)) store.push(value);
     else return false;
   };
 
   this.remove = function (value) {
     if (this.has(value)) {
-      let index = this.store.indexOf(value);
-      this.store.splice(index, 1);
+      let index = store.indexOf(value);
+      store.splice(index, 1);
     }
   };
 
-  this.items = function () {
-    return this.store;
-  };
-
   this.union = function (otherSet) {
-    let setA = this.store;
-    let setB = otherSet.store;
-    setB.forEach((item) => {
-      if (setA.indexOf(item) < 0) setA.push(item);
+    let unionSet = new mySet();
+
+    store.forEach((e) => {
+      unionSet.add(e);
     });
-    return setA;
+    otherSet.items().forEach((item) => {
+      unionSet.add(item);
+    });
+    return unionSet;
   };
 
-  this.intersect = function (setB) {
+  this.intersect = function (otherSet) {
     let result = new mySet();
-    setB.forEach((item) => {
-      if (this.store.has(item)) intersect.add(item);
+
+    store.forEach((item) => {
+      if (otherSet.has(item)) {
+        result.add(item);
+      }
     });
     return result;
   };
 
-  this.difference = function (setB) {
+  this.difference = function (otherSet) {
     let result = new mySet();
 
-    setB.forEach((item) => {
-      if (!this.store.has(item)) result.add(item);
+    otherSet.items().forEach((item) => {
+      if (!this.has(item)) result.add(item);
     });
     return result;
   };
 }
 
-let setA = new mySet();
+this.su
+
+var setA = new mySet();
 setA.add("a");
 setA.add("b");
 setA.add("c");
@@ -57,9 +64,10 @@ setA.add("d");
 setA.add("e");
 setA.add("d");
 setA.add("f");
-setA.remove("c");
+// setA.remove("b");
 console.log(setA.items());
-let setB = new mySet();
+
+var setB = new mySet();
 setB.add("e");
 setB.add("f");
 setB.add("c");
@@ -68,4 +76,7 @@ setB.add("e");
 setB.add("g");
 setB.add("h");
 console.log(setB.items());
-console.log(setA.union(setB));
+
+console.log(setA.union(setB).items());
+console.log(setA.intersect(setB).items());
+console.log(setA.difference(setB).items());
