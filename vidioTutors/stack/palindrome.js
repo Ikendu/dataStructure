@@ -12,10 +12,9 @@ const palindrome = (word) => {
   if (rword === word) {
     console.log(`${word} is a palindrome`);
     return true;
-  } else {
-    console.log(`${word} is not a palindrome`);
-    return false;
   }
+  console.log(`${word} is not a palindrome`);
+  return false;
 };
 
-palindrome("obi");
+palindrome("obibodo");
