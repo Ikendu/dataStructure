@@ -52,9 +52,13 @@ function mySet() {
     });
     return result;
   };
-}
 
-this.su
+  this.subset = function (otherSet) {
+    return otherSet.items().every((e) => {
+      return this.has(e);
+    });
+  };
+}
 
 var setA = new mySet();
 setA.add("a");
@@ -73,10 +77,11 @@ setB.add("f");
 setB.add("c");
 setB.add("d");
 setB.add("e");
-setB.add("g");
-setB.add("h");
+// setB.add("g");
+// setB.add("h");
 console.log(setB.items());
 
 console.log(setA.union(setB).items());
 console.log(setA.intersect(setB).items());
 console.log(setA.difference(setB).items());
+console.log(setA.subset(setB));
