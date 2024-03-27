@@ -20,7 +20,7 @@ function Queue() {
     return store[0];
   };
   this.back = function () {
-    return store[count];
+    return store[count - 1];
   };
 }
 
@@ -28,3 +28,8 @@ let line = new Queue();
 line.enqueue("peter");
 line.enqueue("joy");
 line.enqueue("magi");
+line.enqueue("july");
+line.enqueue("aku");
+line.dequeue();
+console.log(line.front());
+console.log(line.back());
