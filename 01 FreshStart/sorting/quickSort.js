@@ -9,7 +9,8 @@ const quickSort = (array) => {
     if (array[i] < pivot) lower.push(array[i]);
     else higher.push(array[i]);
   }
-  return quickSort(lower).concat(pivot, quickSort(higher));
+    let result = quickSort(lower).concat(pivot, quickSort(higher));
+    return result
 };
 
 function creatList(num) {

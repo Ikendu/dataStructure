@@ -8,15 +8,25 @@ var Stack = function () {
   };
 
   this.pop = function () {
+    if (this.count === 0) return;
     this.count--;
+    let result = this.store[this.count];
     delete this.store[this.count];
-    return this.store;
+
+    console.log("Pop off", result.toUpperCase());
+    return result;
   };
 
   this.remains = function () {
     console.log(this.store);
     return this.store;
   };
+
+  this.size = function () {
+    console.log(this.size);
+    return this.size;
+  };
+
   this.peek = function () {
     console.log(this.store[this.count - 1]);
     return this.store[this.count - 1];
