@@ -12,6 +12,15 @@ function priority(store, item) {
   if (!added) store.push(item);
   return store;
 }
+function size(store) {
+  return store.length;
+}
+function isEmpty(store) {
+  return store.length === 0;
+}
+function front(store) {
+  return store[0];
+}
 
 let pQueue = [];
 let newQueue = priority(pQueue, ["Helen", 3]);
@@ -22,3 +31,6 @@ newQueue = priority(pQueue, ["Gift", 2]);
 newQueue = priority(pQueue, ["David", 3]);
 newQueue = priority(pQueue, ["Ekene", 4]);
 console.log(newQueue);
+console.log(isEmpty(pQueue));
+console.log(size(pQueue));
+console.log(front(pQueue));
