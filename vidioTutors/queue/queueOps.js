@@ -22,6 +22,12 @@ function Queue() {
   this.back = function () {
     return store[count - 1];
   };
+  this.size = function () {
+    return store.length;
+  };
+  this.isEmpty = function () {
+    return store.length === 0;
+  };
 }
 
 let line = new Queue();
@@ -37,3 +43,5 @@ line.enqueue(44);
 line.dequeue();
 console.log(line.front());
 console.log(line.back());
+console.log(line.isEmpty());
+console.log(line.size());
