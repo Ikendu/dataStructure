@@ -1,3 +1,4 @@
+//reducing time complexity by sqrt in prime checking
 function betterPrime(n) {
   if (n <= 1) return false;
   if (n <= 3) return true;
