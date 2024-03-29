@@ -21,7 +21,12 @@ function isEmpty(store) {
 function front(store) {
   return store[0];
 }
-
+function dequeue(store) {
+  return store.shift();
+}
+function allItems(store) {
+  return store;
+}
 let pQueue = [];
 let newQueue = priority(pQueue, ["Helen", 3]);
 newQueue = priority(pQueue, ["Victor", 5]);
@@ -34,3 +39,5 @@ console.log(newQueue);
 console.log(isEmpty(pQueue));
 console.log(size(pQueue));
 console.log(front(pQueue));
+console.log(dequeue(pQueue));
+console.log(allItems(pQueue));
