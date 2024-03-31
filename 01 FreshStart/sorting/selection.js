@@ -76,3 +76,22 @@ console.log("BUBBLE TIME DIFFERENCE", diff);
 // let endIns = new Date().getTime();
 // let diff2 = endIns - startIns;
 // console.log("INSERTION TIME DIFFERNCE", diff2);
+
+const selections = (arr) => {
+  let min;
+
+  for (let i = 0; i < arr.length; i++) {
+    min = i;
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[min]) {
+        min = j;
+      }
+    }
+    let holder = arr[i];
+    arr[i] = arr[min];
+    arr[min] = holder;
+  }
+  return arr;
+};
+
+console.log(`Redo selection sort`, selections([5, 0, 10, 3, 2, 90, 8]));
