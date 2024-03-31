@@ -69,3 +69,14 @@ console.log(
     [3, 20, 6, 5, 8, 5]
   )
 );
+
+function createArr(row, col) {
+  let jagged = new Array(row);
+
+  for (let i = 0; i < col.length; i++) {
+    jagged[i] = new Array(row);
+  }
+  return jagged;
+}
+
+console.log(createArr(4, 5));
