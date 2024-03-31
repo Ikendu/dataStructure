@@ -40,3 +40,20 @@ let abc = randomNum(myArray, 40);
 
 // showItems(abc);
 console.log(bubbleSort(abc));
+
+//redoing
+function bubblest(arr) {
+  let holder;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[i] < arr[j]) {
+        holder = arr[i];
+        arr[i] = arr[j];
+        arr[j] = holder;
+      }
+    }
+  }
+  return arr;
+}
+
+console.log(`Redo bubble`, bubblest([5, 1, 2, 6, 4, 10, 0, 8, 11]));
