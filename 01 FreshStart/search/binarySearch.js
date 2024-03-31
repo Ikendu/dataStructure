@@ -20,3 +20,25 @@ const binary = (arr, data) => {
 
 let nums = [20, 10, 30, 70, 50, 30, 40, 100, 15];
 console.log(binary(nums, 40));
+
+function binarys(array, item) {
+  array = array.sort((a, b) => a - b);
+  if (array.length < 1) return false;
+  let left = 0;
+  let right = array.length - 1;
+
+  while (left <= right) {
+    let middle = Math.floor((left + right) / 2);
+    if (item === array[middle]) {
+      return true;
+    } else if (item < array[middle]) {
+      right = middle - 1;
+    } else {
+      left = middle + 1;
+    }
+  }
+  return false;
+}
+
+console.log(`Second search`);
+console.log(binarys([6, 3, 2, 4, 5, 10, 14], 3));
